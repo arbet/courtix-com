@@ -23,7 +23,6 @@ Contact: hello@courtix.com · +1 (830) 293-3496
 - [Solutions](https://courtix.com/solutions): Industry-specific engagements
 - [Portfolio](https://courtix.com/portfolio): Selected case studies
 - [About](https://courtix.com/about): Company details, values and registration
-- [Platforms](https://courtix.com/platforms): Platforms Courtix builds on and integrates with (Cloudflare, AWS, Stripe, Wise, GitHub, managed AI APIs)
 - [Contact](https://courtix.com/contact): Project enquiry form
 
 ## Trust

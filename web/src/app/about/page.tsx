@@ -83,8 +83,8 @@ export default function AboutPage() {
               <Link href="/trust" className="btn-secondary">
                 Trust Center
               </Link>
-              <Link href="/platforms" className="btn-ghost">
-                Platforms
+              <Link href="/trust/security" className="btn-ghost">
+                Security
               </Link>
             </div>
           </aside>

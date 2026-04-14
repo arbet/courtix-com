@@ -58,6 +58,21 @@ Please include:
 - Any proof-of-concept you&rsquo;re willing to share.
 - Whether you&rsquo;re willing to be credited publicly.
 
+## Sub-processors
+
+We use a small number of third-party platforms and services to deliver our engagements. Any sub-processor with access to client data is disclosed before an engagement begins and is subject to the same security expectations as our own systems.
+
+| Sub-processor | Purpose | Data handled |
+| --- | --- | --- |
+| **Amazon Web Services** | Cloud hosting, compute, managed data, object storage, CDN | Application and customer data for workloads we run on AWS |
+| **Cloudflare** | Edge network, CDN, WAF, DDoS protection, DNS, Zero Trust | Network traffic and metadata for production systems behind Cloudflare |
+| **GitHub** | Source control, CI, dependency scanning | Source code and build artefacts |
+| **Wise** | Card payment processing | Cardholder data (handled end-to-end by Wise under PCI DSS; we do not store card details) |
+| **Stripe** | Payments and billing (when used in client engagements) | Cardholder data and billing metadata for the engagements it is used on |
+| **Managed LLM APIs** | AI inference for applications that require it | Only the data the application is designed to send, per the engagement-level data flow |
+
+Additional platform choices (Google Cloud, Microsoft Azure, dedicated infrastructure) may be introduced per engagement at the client&rsquo;s request and are disclosed in the engagement contract.
+
 ## Procurement and due diligence
 
 For enterprise procurement and vendor onboarding, we provide:

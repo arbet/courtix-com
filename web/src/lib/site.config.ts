@@ -50,7 +50,6 @@ export const siteConfig = {
         { label: "Service Level Agreement", href: "/trust/sla", description: "Uptime and response commitments" },
       ],
     },
-    { label: "Platforms", href: "/platforms" },
     { label: "About", href: "/about" },
     { label: "Blog", href: "/blog" },
   ],
@@ -63,7 +62,6 @@ export const siteConfig = {
     company: [
       { label: "About", href: "/about" },
       { label: "Portfolio", href: "/portfolio" },
-      { label: "Platforms", href: "/platforms" },
       { label: "Blog", href: "/blog" },
       { label: "Contact", href: "/contact" },
     ],
@@ -80,14 +78,6 @@ export const siteConfig = {
       { label: "Acceptable Use", href: "/legal/aup" },
     ],
   },
-  partners: [
-    { name: "Cloudflare", note: "Infrastructure & edge network" },
-    { name: "Amazon Web Services", note: "Cloud platform" },
-    { name: "Stripe", note: "Payments platform" },
-    { name: "Wise", note: "Card payment processing" },
-    { name: "GitHub", note: "Source control & CI" },
-    { name: "Vercel", note: "Frontend deployments" },
-  ],
   infrastructure: [
     { name: "AWS" },
     { name: "Google Cloud" },
