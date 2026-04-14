@@ -59,7 +59,14 @@ function readDir(rel: string) {
 export async function getPortfolio(): Promise<PortfolioMeta[]> {
   return readDir("portfolio")
     .map(({ slug, data, content }) => ({ ...PortfolioSchema.parse(data), slug, body: content }))
-    .sort((a, b) => (b.year ?? 0) - (a.year ?? 0));
+    .sort((a, b) => {
+      // Featured first, then most recent year, then alphabetical title for stable order.
+      const featuredDiff = Number(!!b.featured) - Number(!!a.featured);
+      if (featuredDiff !== 0) return featuredDiff;
+      const yearDiff = (b.year ?? 0) - (a.year ?? 0);
+      if (yearDiff !== 0) return yearDiff;
+      return a.title.localeCompare(b.title);
+    });
 }
 
 export async function getPortfolioBySlug(slug: string): Promise<PortfolioMeta | null> {
