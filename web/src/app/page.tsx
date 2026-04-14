@@ -111,12 +111,20 @@ const homeFaqs = [
     a: "We accept Visa and Mastercard in US Dollars, processed through Wise (a regulated financial institution, FCA firm reference 900507). Projects are typically scoped with a deposit and milestone billing. Full terms and our refund policy are published and acknowledged before any engagement starts.",
   },
   {
-    q: "Do you deploy on Cloudflare and AWS?",
-    a: "Yes, they are the two platforms we deploy on most. Our applications are built on standard modern web technologies (TypeScript, React, Next.js, Python, PostgreSQL) which run cleanly on both Cloudflare and AWS. We choose the platform per workload based on latency, compliance and the client’s existing commitments.",
+    q: "How do you decide where to host a workload?",
+    a: "We choose the platform per workload based on latency, compliance, the client’s existing commitments and operational cost. Most of our production work runs on Cloudflare and AWS, and we’re equally comfortable deploying to Google Cloud, Azure or dedicated infrastructure when the workload calls for it. Our applications are built on standard, portable web technologies, so the code doesn’t get stuck on one cloud.",
   },
   {
     q: "How do you handle security and compliance?",
     a: "We follow a written Secure SDLC policy covering threat modeling, code review, dependency scanning, secrets management and incident response. Enterprise buyers can review our Trust Center, including security posture, SLA and SDLC documents, without signing an NDA.",
+  },
+  {
+    q: "Who owns the code and intellectual property at the end of an engagement?",
+    a: "You do. Upon full payment, you own all the custom software and code we develop specifically for you. We retain the right to use general-purpose tools, libraries and frameworks in other projects, and any pre-existing intellectual property stays with its original owner. The full wording is in our Terms.",
+  },
+  {
+    q: "Can we start with a paid discovery before committing to a full engagement?",
+    a: "Yes, and we encourage it. A one- to two-week paid discovery sprint lets us understand your problem, review any existing code or systems, produce an architecture brief and deliver a written proposal with scope and cost. You decide whether to proceed to a full build. It’s the lowest-risk way to start working together.",
   },
 ];
 

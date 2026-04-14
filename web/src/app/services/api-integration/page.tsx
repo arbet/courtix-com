@@ -26,6 +26,14 @@ const faqs = [
     q: "REST or GraphQL?",
     a: "Both, depending on the problem. GraphQL is great when you have many clients with different data needs. REST is usually simpler for partner-facing APIs where predictability and caching matter most.",
   },
+  {
+    q: "What happens when a third-party API we depend on breaks?",
+    a: "Every integration we build assumes the external service will eventually fail. We implement retries with exponential backoff, circuit breakers, idempotent replay and structured alerting so partial outages don’t cascade into yours. Every integration has a documented fallback behaviour (queue for later, serve from cache, page on-call) agreed during design, so the system’s response to a vendor outage is a deliberate choice and not an accident.",
+  },
+  {
+    q: "How do you secure webhook endpoints?",
+    a: "Signed webhook verification on every request (HMAC where the vendor supports it, mutual TLS where they don’t), IP allowlists when the vendor publishes a static egress range, replay protection with timestamps and nonces, regularly rotated secrets, and structured audit logging of every received webhook for investigation.",
+  },
 ];
 
 export default function ApiIntegrationPage() {

@@ -38,6 +38,18 @@ const faqs = [
     q: "What’s your uptime target?",
     a: "We target 99.9% monthly uptime for production workloads with 30-minute Sev-1 response during business hours, or 24×7 with a contracted on-call rotation. See our [SLA](/trust/sla) for full details.",
   },
+  {
+    q: "What are your RPO and RTO targets?",
+    a: "Defined per system in the engagement contract. Typical production targets are an RPO of 15 minutes or less and an RTO of 4 hours or less. Backups are automated, encrypted, cross-region where the workload calls for it, and we test restore procedures on a quarterly basis. No backup is considered valid until it has been successfully restored in a drill.",
+  },
+  {
+    q: "How do you handle data residency requirements?",
+    a: "The primary region for every workload is chosen during discovery based on your regulatory and commercial requirements. Backups and replicas are kept in-region (or in an approved set of regions) by default. Data residency commitments and any cross-border transfer flows are documented in the engagement-level data flow, which becomes a deliverable you can show an auditor.",
+  },
+  {
+    q: "Can you operate a system you didn’t build?",
+    a: "Yes. We start with a codebase and infrastructure review, then propose a stabilisation plan before we agree to any SLA commitments. We don’t take on production on-call responsibility for a system we haven’t had time to understand: that’s a fast path to an outage neither party wants.",
+  },
 ];
 
 export default function PlatformReliabilityPage() {

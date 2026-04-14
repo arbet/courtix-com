@@ -30,6 +30,18 @@ const faqs = [
     q: "Do you sign NDAs and DPAs?",
     a: "Yes to both. We have standard NDA and Data Processing Agreement templates that we can sign quickly, or we can counter-sign yours.",
   },
+  {
+    q: "How do you handle scope change during a project?",
+    a: "The written scope from the discovery sprint is the contract baseline. Any scope change goes through a written amendment describing what’s changing, why, the cost impact and the timeline impact. You decide whether to approve the amendment before work on it begins. We don’t do silent scope creep and we don’t start an amendment clock before you’ve agreed.",
+  },
+  {
+    q: "What does weekly progress reporting look like?",
+    a: "Every week you get a live demo of what shipped that week, a written status document covering progress, risks, blockers and upcoming work, and an open issue tracker you can read at any time. If something is off track you hear about it from us before it becomes a problem. No vague weekly reports that say ‘progress made’.",
+  },
+  {
+    q: "Can we keep the engineering team after launch?",
+    a: "Yes. Post-launch retainers are a standard option: the same engineers who built the system continue to operate and extend it under a monthly retainer with agreed capacity and response times. If a retainer isn’t what you want, we do a clean hand-over with documentation, onboarding and a short training period for your internal team.",
+  },
 ];
 
 export default function SoftwareDevelopmentPage() {
