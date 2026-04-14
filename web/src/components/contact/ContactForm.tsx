@@ -55,7 +55,7 @@ export function ContactForm() {
           name="service"
           options={[
             "Custom Software Development",
-            "API Integration & Consulting",
+            "Integration Engineering",
             "Platform & Reliability Engineering",
             "Not sure yet",
           ]}

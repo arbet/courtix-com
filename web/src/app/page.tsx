@@ -38,7 +38,7 @@ const services = [
   },
   {
     icon: Cable,
-    title: "API Integration",
+    title: "Integration Engineering",
     description:
       "Connect systems, automate workflows and unify data. From bespoke integrations to event-driven architectures at scale.",
     href: "/services/api-integration",

@@ -35,7 +35,7 @@ export const siteConfig = {
       href: "/services",
       children: [
         { label: "Software Development", href: "/services/software-development", description: "Custom applications, platforms and APIs" },
-        { label: "API Integration", href: "/services/api-integration", description: "Systems, data and workflow automation" },
+        { label: "Integration Engineering", href: "/services/api-integration", description: "Systems, data and workflow automation" },
         { label: "Platform & Reliability Engineering", href: "/services/platform-reliability", description: "Deploy, operate and keep production running" },
       ],
     },
@@ -57,7 +57,7 @@ export const siteConfig = {
   footer: {
     services: [
       { label: "Software Development", href: "/services/software-development" },
-      { label: "API Integration", href: "/services/api-integration" },
+      { label: "Integration Engineering", href: "/services/api-integration" },
       { label: "Platform & Reliability Engineering", href: "/services/platform-reliability" },
     ],
     company: [

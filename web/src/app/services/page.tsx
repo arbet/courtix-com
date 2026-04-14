@@ -28,7 +28,7 @@ const services = [
   },
   {
     icon: Cable,
-    title: "API Integration",
+    title: "Integration Engineering",
     description:
       "Connect the systems your business already runs on, and automate the work between them.",
     href: "/services/api-integration",

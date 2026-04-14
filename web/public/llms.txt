@@ -18,7 +18,7 @@ Contact: hello@courtix.com · +1 (830) 293-3496
 - [Home](https://courtix.com/): Overview of services, principles and recent work
 - [Services](https://courtix.com/services): Software development, API integration and platform engineering
 - [Software Development](https://courtix.com/services/software-development): Custom application engineering
-- [API Integration](https://courtix.com/services/api-integration): System integration and workflow automation
+- [Integration Engineering](https://courtix.com/services/api-integration): Systems integration, API design and workflow automation
 - [Platform & Reliability Engineering](https://courtix.com/services/platform-reliability): CI/CD, infrastructure, managed data, observability, on-call and reliability engineering
 - [Solutions](https://courtix.com/solutions): Industry-specific engagements
 - [Portfolio](https://courtix.com/portfolio): Selected case studies

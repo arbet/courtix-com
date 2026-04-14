@@ -7,9 +7,9 @@ import { FaqJsonLd, ServiceJsonLd, BreadcrumbJsonLd } from "@/components/seo/Str
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata = buildMetadata({
-  title: "API Integration & Consulting",
+  title: "Integration Engineering",
   description:
-    "API design, system integration, workflow automation and event-driven architectures. RESTful and GraphQL APIs, ETL pipelines and partner integrations.",
+    "Systems integration, API design, workflow automation and event-driven architectures. RESTful and GraphQL APIs, ETL pipelines and partner integrations, engineered for production.",
   path: "/services/api-integration",
 });
 
@@ -43,16 +43,16 @@ export default function ApiIntegrationPage() {
         items={[
           { name: "Home", href: "/" },
           { name: "Services", href: "/services" },
-          { name: "API Integration", href: "/services/api-integration" },
+          { name: "Integration Engineering", href: "/services/api-integration" },
         ]}
       />
       <ServiceJsonLd
-        name="API Integration & Consulting"
-        description="API design, system integration and workflow automation."
+        name="Integration Engineering"
+        description="Systems integration, API design and workflow automation."
         path="/services/api-integration"
       />
       <ServiceDetail
-        eyebrow="API Integration"
+        eyebrow="Integration Engineering"
         title="Systems that actually talk to each other."
         description="We design, build and maintain the APIs and integrations that move data between the systems your business runs on, so your team stops doing it manually."
         icon={Cable}
@@ -74,7 +74,7 @@ export default function ApiIntegrationPage() {
         stack={["TypeScript", "Node.js", "Python", "PostgreSQL", "Redis", "REST", "GraphQL", "OpenAPI", "Webhooks"]}
       />
       <ScopingPath />
-      <FAQ items={faqs} title="API integration FAQ" />
+      <FAQ items={faqs} title="Integration engineering FAQ" />
       <FaqJsonLd faqs={faqs} />
       <CTABand />
     </>
