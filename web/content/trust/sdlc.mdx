@@ -5,6 +5,8 @@ updated: "2026-04-14"
 version: "1.0"
 ---
 
+> This policy describes the secure development controls Courtix operates across client engagements. It is written to be reviewable by client security teams and procurement reviewers. Where a specific engagement requires formal attestation, additional evidence, or controls beyond what is described here, we scope that work explicitly as part of the statement of work.
+
 ## 1. Purpose and scope
 
 This policy defines the secure Software Development Lifecycle (SDLC) that **Courtix Hosting LLC** follows for every engagement. It applies to all software that we design, develop, deploy or operate, whether for a client, for our own infrastructure, or as an internal tool.
@@ -20,10 +22,11 @@ This policy is reviewed at least annually and after any material change in our d
 
 ## 2. Roles and responsibilities
 
-- **Engineering Lead**: owns the SDLC for each project, approves architecture and release decisions.
+- **Engineering Lead**: owns the SDLC for each project, approves architecture and release decisions, and acts as the security point of contact unless a separate Security Contact is named for the engagement.
 - **Developers**: follow the SDLC controls, raise risks, and complete required reviews.
-- **Security Contact**: maintains this policy, coordinates incident response and tracks vulnerability remediation.
 - **Client Sponsor**: approves scope changes, accepts deliverables, and is notified of security-relevant events affecting their system.
+
+In smaller engagements these roles may be held by the same individual, with separation of duties applied to sensitive approvals (for example, the author of a security-sensitive change is never the sole reviewer of that change).
 
 ## 3. SDLC phases
 
@@ -35,7 +38,7 @@ This policy is reviewed at least annually and after any material change in our d
 
 ### 3.2 Design
 
-- Lightweight **threat modelling** (STRIDE) for each new system or significant change.
+- **Threat modelling** informed by STRIDE for new systems and significant architectural changes, scaled to the risk of the change.
 - Data-flow diagrams with trust boundaries explicitly drawn.
 - Selection of authentication, authorization, encryption and key management approaches.
 - Architecture review by a second engineer before implementation begins.
@@ -60,8 +63,8 @@ Every change is validated by a combination of automated and manual testing:
 - **Integration tests** for system boundaries and external services.
 - **Static Application Security Testing (SAST)** run in CI on every pull request.
 - **Dependency scanning** on every build (SCA, software composition analysis).
-- **Dynamic Application Security Testing (DAST)** on staging environments before production releases for any system handling regulated data.
-- **Manual security review** for net-new features that touch authentication, authorization or payments.
+- **Dynamic testing** of staging environments before production releases for systems handling regulated data, using tooling appropriate to the stack (for example OWASP ZAP), where contractually required.
+- **Manual security review** by a second reviewer for net-new features that touch authentication, authorization or payments.
 
 ## 4. Secure coding standards
 
@@ -85,15 +88,15 @@ Specific baseline requirements:
 - All direct dependencies are pinned to exact versions.
 - Lockfiles (pnpm-lock.yaml, go.sum, requirements.txt with hashes) are committed.
 - Automated dependency update tools (Dependabot, Renovate) are configured for every project.
-- Critical vulnerabilities (CVSS ≥ 9.0) are triaged within **24 hours** of disclosure.
-- A Software Bill of Materials (**SBOM**) is generated for every release of systems we operate.
+- Critical vulnerabilities (CVSS ≥ 9.0) are triaged on the next business day after disclosure and remediated per the timelines in section 8.3.
+- Software Bill of Materials (**SBOM**) generation is available on request for systems we operate, using standard tooling such as Syft or CycloneDX.
 
 ## 6. Secrets management
 
 - Secrets are never stored in source control, plain-text config files or CI logs.
 - Local development uses developer-specific credentials with least privilege.
 - Production secrets are stored in the platform secret store and rotated at least annually, or immediately on suspected compromise.
-- Pre-commit hooks and CI scans are in place to prevent accidental secret commits.
+- CI scans run on every pull request to detect accidental secret commits, and developer tooling is configured to flag secrets before commit where practical.
 
 ## 7. Release management
 
@@ -128,10 +131,10 @@ Specific baseline requirements:
 
 ## 9. Incident response
 
-- A written incident response runbook is maintained and rehearsed at least annually.
+- A written incident response runbook is maintained and reviewed at least annually.
 - Incidents are classified by severity and scope.
 - Affected clients are notified **within 72 hours** of confirmation for any incident that materially affects the confidentiality, integrity or availability of their data.
-- A post-incident review is produced for every Sev-1 and Sev-2 incident, including root cause, timeline and corrective actions.
+- A post-incident review is produced for every major incident, including root cause, timeline and corrective actions.
 
 ## 10. Change management
 
@@ -142,7 +145,7 @@ Specific baseline requirements:
 ## 11. Training and awareness
 
 - All engineers complete an onboarding security briefing before touching client systems.
-- Annual refresher training covers current OWASP risks, social engineering and incident reporting procedures.
+- Engineers review current OWASP risks, social engineering patterns and incident reporting procedures at least annually as part of team security updates.
 - New engineers are paired with an experienced reviewer for their first month.
 
 ## 12. Decommissioning

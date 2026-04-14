@@ -1,7 +1,26 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
 import type { ComponentProps } from "react";
+import remarkGfm from "remark-gfm";
 
 const components = {
+  table: (props: ComponentProps<"table">) => (
+    <div className="my-6 overflow-x-auto rounded-lg border border-border-subtle">
+      <table className="w-full border-collapse text-sm text-fg-muted" {...props} />
+    </div>
+  ),
+  thead: (props: ComponentProps<"thead">) => (
+    <thead className="bg-white/[0.02] text-left text-fg" {...props} />
+  ),
+  tbody: (props: ComponentProps<"tbody">) => (
+    <tbody className="divide-y divide-border-subtle" {...props} />
+  ),
+  tr: (props: ComponentProps<"tr">) => <tr {...props} />,
+  th: (props: ComponentProps<"th">) => (
+    <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wider" {...props} />
+  ),
+  td: (props: ComponentProps<"td">) => (
+    <td className="px-4 py-3 align-top leading-relaxed" {...props} />
+  ),
   h2: (props: ComponentProps<"h2">) => (
     <h2 className="mt-14 scroll-mt-24 text-2xl font-semibold tracking-tight text-fg" {...props} />
   ),
@@ -23,7 +42,11 @@ const components = {
 export function Mdx({ source }: { source: string }) {
   return (
     <div className="prose-courtix">
-      <MDXRemote source={source} components={components} />
+      <MDXRemote
+        source={source}
+        components={components}
+        options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
+      />
     </div>
   );
 }
