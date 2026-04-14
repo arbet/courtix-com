@@ -14,21 +14,28 @@ export const metadata = buildMetadata({
 
 const values = [
   {
-    title: "Transparency",
-    body: "No hidden fees, no scope surprises. You always know where your project stands, and why.",
+    title: "Senior engineers only",
+    body: "Every engagement is staffed with senior engineers who have shipped production software before. No junior hand-offs, no body-shop model, no one learning on your dime.",
   },
   {
-    title: "Accountability",
-    body: "The people who design your system are the ones who build, ship and operate it. No hand-offs.",
+    title: "Written scope before any code",
+    body: "Every project starts with a paid discovery and a written scope. No open-ended hourly meters, no surprise invoices, no silent scope creep. You see the plan before we build.",
   },
   {
-    title: "Craftsmanship",
-    body: "Clean, documented, tested code. We’d rather write a simple thing well than an elegant thing poorly.",
+    title: "One team, end-to-end accountable",
+    body: "The same people who design your system build it, ship it and operate it in production. No hand-offs between design, development and operations. No dropped context.",
   },
   {
-    title: "Long-term partnerships",
-    body: "We stay after launch. Our best references are clients who have worked with us for years.",
+    title: "Clients stay for years, not months",
+    body: "Our best references are clients who have worked with us across multiple engagements. We optimise for long-term partnerships, not one-off builds, and we stay available after launch.",
   },
+];
+
+const stats = [
+  { k: "15+", v: "Years operating" },
+  { k: "250+", v: "Projects delivered" },
+  { k: "100+", v: "Clients worldwide" },
+  { k: "20+", v: "Countries served" },
 ];
 
 export default function AboutPage() {
@@ -59,9 +66,10 @@ export default function AboutPage() {
             </p>
             <p>
               Our team brings together experienced developers, SREs and project managers who have delivered
-              production software across fintech, e-commerce, healthcare, logistics, AI and SaaS. Every engagement
-              is owned end-to-end by the people who design, build, ship and operate the system. No hand-offs, no
-              dropped context.
+              production software across healthcare, applied AI, government and public sector, on-demand
+              marketplaces, enterprise internal platforms and marketing technology. Every engagement is owned
+              end-to-end by the people who design, build, ship and operate the system. No hand-offs, no dropped
+              context.
             </p>
           </div>
 
@@ -91,8 +99,25 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <section className="container-max my-20">
+        <div className="eyebrow mb-6 text-center">By the numbers · since 2011</div>
+        <div className="mx-auto grid max-w-5xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border-subtle bg-border-subtle md:grid-cols-4">
+          {stats.map((s) => (
+            <div key={s.v} className="bg-surface-1/80 p-6 text-center backdrop-blur">
+              <div className="font-display text-3xl font-semibold text-gradient-brand">{s.k}</div>
+              <div className="mt-1 text-xs uppercase tracking-wider text-fg-faint">{s.v}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="container-max my-24">
-        <SectionHeading eyebrow="What we stand for" title="Four values, applied consistently." align="center" />
+        <SectionHeading
+          eyebrow="What we stand for"
+          title="Four commitments, applied consistently."
+          description="These are the operating rules every engagement follows. They’re how enterprise buyers can predict exactly how we’ll behave before signing anything."
+          align="center"
+        />
         <div className="mt-12 grid gap-4 md:grid-cols-2">
           {values.map((v) => (
             <div key={v.title} className="rounded-2xl border border-border-subtle bg-surface-1/40 p-6">
