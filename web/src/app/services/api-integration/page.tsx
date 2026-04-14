@@ -1,5 +1,6 @@
 import { Cable } from "lucide-react";
 import { ServiceDetail } from "@/components/marketing/ServiceDetail";
+import { ScopingPath } from "@/components/marketing/ScopingPath";
 import { CTABand } from "@/components/marketing/CTABand";
 import { FAQ } from "@/components/marketing/FAQ";
 import { FaqJsonLd, ServiceJsonLd, BreadcrumbJsonLd } from "@/components/seo/StructuredData";
@@ -41,14 +42,11 @@ export default function ApiIntegrationPage() {
         name="API Integration & Consulting"
         description="API design, system integration and workflow automation."
         path="/services/api-integration"
-        offers={[{ price: "500", priceCurrency: "USD" }]}
       />
       <ServiceDetail
         eyebrow="API Integration"
         title="Systems that actually talk to each other."
         description="We design, build and maintain the APIs and integrations that move data between the systems your business runs on, so your team stops doing it manually."
-        priceFrom="From $500"
-        priceNote="Per engagement, quoted in USD"
         icon={Cable}
         included={[
           "RESTful and GraphQL API design and development",
@@ -65,8 +63,9 @@ export default function ApiIntegrationPage() {
           { title: "One source of truth", description: "Data reconciled between systems with idempotent, replayable pipelines." },
           { title: "Integrations you can trust", description: "Every external call is retried, logged and monitored for drift." },
         ]}
-        stack={["TypeScript", "Node.js", "Go", "PostgreSQL", "Kafka", "Redis", "OpenAPI", "Webhooks", "Cloudflare Queues"]}
+        stack={["TypeScript", "Node.js", "Python", "PostgreSQL", "Redis", "REST", "GraphQL", "OpenAPI", "Webhooks"]}
       />
+      <ScopingPath />
       <FAQ items={faqs} title="API integration FAQ" />
       <FaqJsonLd faqs={faqs} />
       <CTABand />

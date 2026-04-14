@@ -61,9 +61,15 @@ export function ContactForm() {
           ]}
         />
         <Select
-          label="Estimated budget (USD)"
-          name="budget"
-          options={["$2,500 – $10,000", "$10,000 – $25,000", "$25,000 – $75,000", "$75,000+", "Not sure yet"]}
+          label="Engagement type"
+          name="engagement"
+          options={[
+            "Discovery sprint",
+            "Fixed-scope build",
+            "Ongoing retainer / embedded team",
+            "Technical due diligence / codebase review",
+            "Not sure yet",
+          ]}
         />
       </div>
 

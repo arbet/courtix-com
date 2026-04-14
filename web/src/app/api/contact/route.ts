@@ -9,7 +9,7 @@ const Body = z.object({
   company: z.string().max(200).optional().default(""),
   role: z.string().max(200).optional().default(""),
   service: z.string().max(100).optional().default(""),
-  budget: z.string().max(100).optional().default(""),
+  engagement: z.string().max(100).optional().default(""),
   message: z.string().min(10).max(5000),
   accept: z.union([z.literal("on"), z.literal(true), z.literal("true")]),
   website: z.string().max(0).optional().default(""), // honeypot
@@ -58,7 +58,7 @@ export async function POST(req: Request) {
             `Company: ${payload.company}`,
             `Role: ${payload.role}`,
             `Service: ${payload.service}`,
-            `Budget: ${payload.budget}`,
+            `Engagement: ${payload.engagement}`,
             "",
             payload.message,
             "",

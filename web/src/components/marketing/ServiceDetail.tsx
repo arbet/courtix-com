@@ -7,8 +7,6 @@ export type ServiceDetailProps = {
   eyebrow: string;
   title: string;
   description: string;
-  priceFrom?: string;
-  priceNote?: string;
   icon: LucideIcon;
   included: string[];
   outcomes: { title: string; description: string }[];
@@ -19,8 +17,6 @@ export function ServiceDetail({
   eyebrow,
   title,
   description,
-  priceFrom,
-  priceNote,
   icon: Icon,
   included,
   outcomes,
@@ -33,12 +29,9 @@ export function ServiceDetail({
           <Link href="/contact?intent=start" className="btn-primary">
             Start a project <ArrowRight className="h-4 w-4" />
           </Link>
-          {priceFrom && (
-            <div className="text-sm text-fg-muted">
-              <span className="font-semibold text-fg">{priceFrom}</span>
-              {priceNote && <span> · {priceNote}</span>}
-            </div>
-          )}
+          <Link href="/contact?intent=start" className="btn-ghost text-sm">
+            Or start with a discovery sprint
+          </Link>
         </div>
       </PageHero>
 

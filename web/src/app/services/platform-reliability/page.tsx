@@ -1,5 +1,6 @@
 import { Workflow } from "lucide-react";
 import { ServiceDetail } from "@/components/marketing/ServiceDetail";
+import { ScopingPath } from "@/components/marketing/ScopingPath";
 import { CTABand } from "@/components/marketing/CTABand";
 import { FAQ } from "@/components/marketing/FAQ";
 import { FaqJsonLd, ServiceJsonLd, BreadcrumbJsonLd } from "@/components/seo/StructuredData";
@@ -101,6 +102,7 @@ export default function PlatformReliabilityPage() {
           "AWS",
         ]}
       />
+      <ScopingPath />
       <FAQ items={faqs} title="Platform & Reliability Engineering FAQ" />
       <FaqJsonLd faqs={faqs} />
       <CTABand />

@@ -1,5 +1,6 @@
 import { Code2 } from "lucide-react";
 import { ServiceDetail } from "@/components/marketing/ServiceDetail";
+import { ScopingPath } from "@/components/marketing/ScopingPath";
 import { CTABand } from "@/components/marketing/CTABand";
 import { FAQ } from "@/components/marketing/FAQ";
 import { FaqJsonLd, ServiceJsonLd, BreadcrumbJsonLd } from "@/components/seo/StructuredData";
@@ -8,7 +9,7 @@ import { buildMetadata } from "@/lib/metadata";
 export const metadata = buildMetadata({
   title: "Custom Software Development",
   description:
-    "Senior engineering team building custom applications, platforms, internal tools and APIs for enterprises. TypeScript, Go, Python, cloud-native.",
+    "Senior engineering team building custom applications, platforms, internal tools and APIs for enterprises. TypeScript, React, Python, cloud-native.",
   path: "/services/software-development",
 });
 
@@ -45,14 +46,11 @@ export default function SoftwareDevelopmentPage() {
         name="Custom Software Development"
         description="Custom applications, platforms, internal tools and APIs for enterprises."
         path="/services/software-development"
-        offers={[{ price: "2500", priceCurrency: "USD" }]}
       />
       <ServiceDetail
         eyebrow="Software Development"
         title="Custom software, engineered to ship."
         description="Applications, internal platforms, APIs and data systems designed around the way your team actually works. Senior engineers own every project end-to-end."
-        priceFrom="From $2,500"
-        priceNote="Per project, quoted in USD"
         icon={Code2}
         included={[
           "Technical discovery and requirements analysis",
@@ -94,6 +92,7 @@ export default function SoftwareDevelopmentPage() {
           "Docker",
         ]}
       />
+      <ScopingPath />
       <FAQ items={faqs} title="Software development FAQ" />
       <FaqJsonLd faqs={faqs} />
       <CTABand />
