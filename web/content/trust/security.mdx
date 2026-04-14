@@ -1,0 +1,69 @@
+---
+title: "Security at Courtix"
+description: "Our security posture, controls and how to report a vulnerability."
+updated: "2026-04-14"
+version: "1.0"
+---
+
+## Overview
+
+Courtix Hosting LLC builds and operates software for clients who care about security. This page summarises our security posture for procurement teams, auditors and anyone doing due diligence. For the detailed engineering process, see our [Secure SDLC Policy](/trust/sdlc).
+
+## Organisational controls
+
+- **Written security policies** — Secure SDLC, acceptable use, incident response, access control and data retention.
+- **Background-checked engineers** — all team members with production access are background-checked where local law permits.
+- **Least-privilege access** — production access is scoped to the people actively working on a system.
+- **MFA everywhere** — source control, cloud consoles, email and chat require multi-factor authentication.
+
+## Technical controls
+
+- **Encryption in transit** — TLS 1.2 or higher on every public endpoint, HSTS on production systems we operate.
+- **Encryption at rest** — managed via cloud-provider KMS (Cloudflare, AWS).
+- **Secrets management** — platform secret stores; no secrets in source control or CI logs.
+- **Dependency scanning** — automated on every build, with target remediation times published in our SDLC policy.
+- **Static and dynamic analysis** — SAST on every pull request, DAST for systems handling regulated data.
+- **Infrastructure as code** — Terraform and Wrangler for repeatable, reviewable infrastructure.
+
+## Payment processing
+
+Card payments are processed through **Wise**, a regulated financial institution authorised by the UK Financial Conduct Authority (FCA firm reference 900507). We do not store, log or retain cardholder data on our servers. Wise handles PCI DSS compliance for card processing.
+
+## Data handling
+
+- **Data classification** — we classify data as public, internal, confidential or restricted, with handling rules per class.
+- **Retention** — data is retained only as long as required to deliver services or meet legal obligations. See our [Privacy Policy](/legal/privacy).
+- **Deletion** — on request or at end of engagement, client data is securely deleted from our systems and backups.
+- **Regional compliance** — we honour GDPR data subject rights and support data residency requirements where applicable.
+
+## Compliance posture
+
+- **PCI DSS** — aligned via Wise as the regulated payment processor.
+- **GDPR** — data subject rights supported; Data Processing Agreement available on request.
+- **SOC 2** — controls mapped to SOC 2 Type I criteria; formal attestation in progress (placeholder — contact us for current status).
+- **HIPAA** — we have delivered HIPAA-aligned systems for healthcare clients under BAAs.
+
+## Reporting a vulnerability
+
+If you believe you&rsquo;ve found a security vulnerability in any Courtix-operated system, we&rsquo;d like to hear from you.
+
+- **Contact:** [security@courtix.com](mailto:security@courtix.com)
+- **Response time:** we aim to acknowledge reports within **24 hours** and provide a remediation timeline within **5 business days**.
+- **Good-faith researchers:** we will not pursue legal action for responsible disclosure that follows this policy.
+
+Please include:
+
+- A clear description of the issue.
+- Steps to reproduce.
+- Any proof-of-concept you&rsquo;re willing to share.
+- Whether you&rsquo;re willing to be credited publicly.
+
+## Questions from procurement
+
+We&rsquo;re happy to provide additional documentation under NDA for enterprise buyers, including:
+
+- Security questionnaires (SIG Lite, CAIQ).
+- Signed SDLC and incident response policies.
+- Penetration test summaries for systems we operate (scoped per engagement).
+
+Email [security@courtix.com](mailto:security@courtix.com) to start the conversation.

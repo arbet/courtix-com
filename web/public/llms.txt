@@ -1,0 +1,42 @@
+# Courtix Hosting LLC
+
+> Delaware-registered software engineering firm with a globally distributed, remote-first team, building custom applications, cloud-native APIs and managed edge infrastructure for enterprises worldwide.
+
+Courtix Hosting LLC is a Delaware-registered software development company (file number 4680426). Our registered business address is 8 The Green Ste A, Dover, DE 19901, USA. The engineering team is remote-first and globally distributed. We design, build, deploy and operate custom software for clients across fintech, SaaS, e-commerce, healthcare, logistics and AI.
+
+Core competencies:
+- Custom software development (TypeScript, Node.js, Go, Python)
+- Cloud hosting on Cloudflare and AWS (Workers, Pages, R2, D1, EC2, RDS, S3, Lambda)
+- API integration and event-driven workflows
+- DevOps and Site Reliability Engineering
+
+We accept Visa and Mastercard in US Dollars, processed through Wise (FCA firm reference 900507). Every engagement is governed by a written Secure SDLC policy, published at https://courtix.com/trust/sdlc.
+
+Contact: hello@courtix.com · +1 (830) 293-3496
+
+## Core pages
+- [Home](https://courtix.com/): Overview of services, principles and recent work
+- [Services](https://courtix.com/services): Software development, API integration and platform engineering
+- [Software Development](https://courtix.com/services/software-development): Custom application engineering
+- [API Integration](https://courtix.com/services/api-integration): System integration and workflow automation
+- [Platform & Reliability Engineering](https://courtix.com/services/platform-reliability): CI/CD, infrastructure, managed data, observability, on-call and reliability engineering
+- [Solutions](https://courtix.com/solutions): Industry-specific engagements
+- [Portfolio](https://courtix.com/portfolio): Selected case studies
+- [About](https://courtix.com/about): Company details, values and registration
+- [Platforms](https://courtix.com/platforms): Platforms Courtix builds on and integrates with — Cloudflare, AWS, Stripe, Wise, GitHub, managed AI APIs
+- [Contact](https://courtix.com/contact): Project enquiry form
+
+## Trust
+- [Trust Center](https://courtix.com/trust): Entry point for security, SDLC and SLA documentation
+- [Secure SDLC Policy](https://courtix.com/trust/sdlc): Full written secure software development lifecycle
+- [Security](https://courtix.com/trust/security): Security posture and vulnerability reporting
+- [Service Level Agreement](https://courtix.com/trust/sla): Availability and response commitments
+
+## Legal
+- [Terms & Conditions](https://courtix.com/legal/terms)
+- [Privacy Policy](https://courtix.com/legal/privacy)
+- [Refund & Cancellation Policy](https://courtix.com/legal/refund)
+- [Acceptable Use Policy](https://courtix.com/legal/aup)
+
+## Blog
+- [How we ship software to production at Courtix](https://courtix.com/blog/how-we-ship-to-production)

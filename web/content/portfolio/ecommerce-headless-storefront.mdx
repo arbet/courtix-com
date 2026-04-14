@@ -1,0 +1,28 @@
+---
+title: "Headless e-commerce storefront and inventory sync"
+client: "Undisclosed retailer"
+industry: "E-commerce"
+summary: "A headless storefront built on Next.js App Router with edge ISR, plus a custom inventory sync layer between Shopify, an ERP and a regional 3PL."
+stack: ["Next.js", "TypeScript", "Shopify", "Cloudflare Pages", "PostgreSQL", "Go"]
+duration: "4 months"
+year: 2025
+outcomeHeadline: "LCP from 4.2s to 0.8s, checkout up 24%"
+---
+
+## The challenge
+
+The client was running a Shopify theme that had grown organically for seven years. Core Web Vitals were in the red, inventory mismatches between the warehouse and the website were costing real revenue, and the marketing team couldn&rsquo;t ship landing pages without waiting on a developer.
+
+## Our approach
+
+- Moved the storefront to Next.js App Router, deployed on Cloudflare Pages for global low-latency rendering.
+- Wired up the Shopify Storefront API with ISR and on-demand revalidation.
+- Built a Go-based inventory sync service reconciling Shopify, the ERP and the 3PL with eventual consistency guarantees.
+- Gave marketing a CMS-like authoring flow for landing pages via MDX and preview deployments.
+
+## Outcome
+
+- **LCP** improved from 4.2 s to 0.8 s
+- **Checkout conversion** up 24%
+- **Inventory mismatches** reduced by 97% within a month
+- Marketing team now ships landing pages without engineering involvement

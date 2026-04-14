@@ -1,0 +1,17 @@
+name = "courtix-web"
+compatibility_date = "2025-01-15"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = ".vercel/output/static"
+
+# Deploy with:
+#   pnpm pages:build
+#   npx wrangler pages deploy .vercel/output/static --project-name courtix-web
+#
+# Recommended Cloudflare Pages build settings:
+#   Build command:     pnpm install && pnpm pages:build
+#   Build output dir:  .vercel/output/static
+#   Root directory:    web
+#   Env vars:          RESEND_API_KEY, CONTACT_TO, CONTACT_FROM
+
+[vars]
+# Non-secret vars can go here. Put secrets in the Cloudflare dashboard.

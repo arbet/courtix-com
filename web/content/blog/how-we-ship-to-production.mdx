@@ -1,0 +1,37 @@
+---
+title: "How we ship software to production at Courtix"
+description: "A walk through our day-to-day engineering workflow: trunk-based development, protected main, CI gates and the release rituals that let a small team move quickly without breaking things."
+date: "2026-04-10"
+author: "Courtix Engineering"
+tags: ["engineering", "process", "devops"]
+---
+
+Enterprise buyers always ask the same question: *how do you actually ship software?* This post answers it in specifics, not platitudes. It&rsquo;s also the short version of what&rsquo;s covered formally in our [Secure SDLC Policy](/trust/sdlc).
+
+## The one-sentence version
+
+We use trunk-based development, protect the main branch with required reviews and CI checks, and deploy through infrastructure-as-code pipelines that anyone on the team can audit.
+
+## Branches are cheap, main is sacred
+
+Every change starts as a short-lived branch off main. Branches usually live for hours, not days. The main branch is protected: no direct pushes, required reviews, required CI checks and required linear history. If something is merged to main, it has already passed unit tests, integration tests, SAST, dependency scanning and a peer review.
+
+## Reviews are specific
+
+Pull requests are small (usually under 400 lines). Reviewers look at architectural decisions, security-relevant changes and failure modes — not style nits that a formatter could catch. Security-sensitive changes (auth, payments, data access) get a second reviewer by default.
+
+## CI is the source of truth
+
+We don&rsquo;t trust a green local build. The CI pipeline runs the same checks on every pull request and every merge to main: tests, type checks, linters, SAST, dependency scanning. If CI is red, the change doesn&rsquo;t merge. Simple rule, no exceptions.
+
+## Deployments are boring
+
+Production deploys are triggered by merges to main (for the services that support it) or by tagged releases (for the ones that need a human in the loop). Infrastructure changes go through the same pull request flow via Terraform or Wrangler. There is no "someone ssh'd into a box and changed something" path — and that&rsquo;s by design.
+
+## On-call is real
+
+Every system we operate has a runbook, alerts that someone will actually act on, and an on-call rotation with hand-off notes. Incidents get a written post-incident review; the goal is to make the same mistake exactly once.
+
+## Why it matters
+
+None of this is exotic. It&rsquo;s the same set of habits that every high-performing engineering team converges on. The reason we publish this externally is that enterprise buyers want evidence, not promises. Writing our process down is the first step.

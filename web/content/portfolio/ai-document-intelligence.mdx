@@ -1,0 +1,28 @@
+---
+title: "RAG document intelligence tool for legal review"
+client: "Undisclosed professional services firm"
+industry: "AI / Legal"
+summary: "A retrieval-augmented document intelligence platform that lets legal teams ask structured questions against large contract libraries with citation tracking."
+stack: ["Python", "FastAPI", "pgvector", "TypeScript", "Next.js", "AWS"]
+duration: "4 months"
+year: 2024
+outcomeHeadline: "Contract review time cut by 70%"
+---
+
+## The challenge
+
+A professional services firm wanted to let their associates ask questions across a 40,000-document contract library. Off-the-shelf tools either hallucinated citations or couldn&rsquo;t handle the document volume. They also needed a defensible audit trail of every query and answer for partner review.
+
+## Our approach
+
+- Built an ingestion pipeline with chunking, metadata extraction and pgvector embeddings.
+- Used a managed LLM API with prompt caching and structured tool use for citation-first answers.
+- Enforced strict retrieval gating: every answer must ground in cited, linked source passages.
+- Wrapped it in a clean Next.js interface with saved queries, review threads and export to DOCX.
+
+## Outcome
+
+- **70% reduction** in average contract review time
+- **Every answer** linked to verifiable source passages (no ungrounded output)
+- **40,000+ documents** indexed and searchable in seconds
+- Full audit trail of every query, answer and citation for compliance review

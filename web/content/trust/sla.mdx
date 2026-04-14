@@ -1,0 +1,61 @@
+---
+title: "Service Level Agreement"
+description: "Uptime, response and resolution commitments for Courtix-operated services."
+updated: "2026-04-14"
+version: "1.0"
+---
+
+This Service Level Agreement ("SLA") describes the availability and support commitments that Courtix Hosting LLC offers for managed services. Specific terms may be customised in individual engagement contracts — where a contract conflicts with this document, the contract controls.
+
+## Availability
+
+| Tier | Monthly uptime | Credit |
+| --- | --- | --- |
+| Production | ≥ 99.9% | 10% for each 0.1% below target, up to 30% |
+| Staging | Best effort | — |
+
+"Uptime" is measured over calendar-month windows and excludes scheduled maintenance announced at least 48 hours in advance.
+
+## Support response times
+
+| Severity | Description | Response | Update cadence |
+| --- | --- | --- | --- |
+| Sev-1 | Full production outage or critical data integrity issue | ≤ 30 minutes | Hourly |
+| Sev-2 | Major feature unavailable or severe degradation | ≤ 2 hours | Every 4 hours |
+| Sev-3 | Minor feature broken with workaround | ≤ 1 business day | Daily |
+| Sev-4 | Cosmetic / enhancement request | ≤ 3 business days | Weekly |
+
+Response times are measured during our standard business hours (Monday – Friday, 09:00 – 18:00 EST), unless 24×7 coverage is agreed in the engagement contract.
+
+## Incident communication
+
+- We notify affected customers of any confirmed Sev-1 or Sev-2 incident within **30 minutes** of detection.
+- Status updates are provided through the channel agreed in the engagement (email, Slack, a shared status page).
+- A post-incident review is delivered within **5 business days** of resolution for every Sev-1 and Sev-2 incident.
+
+## Maintenance windows
+
+- Planned maintenance is scheduled outside peak hours where possible.
+- Customers receive at least **48 hours** notice of planned maintenance that may affect availability.
+- Emergency maintenance to address a security issue or active incident may occur without prior notice; we will notify affected customers as soon as practical.
+
+## Exclusions
+
+The SLA does not apply to downtime caused by:
+
+- Factors outside our reasonable control (natural disaster, third-party network failure, upstream provider outage).
+- Customer actions (misconfiguration, throttling by customer, DDoS originating from customer systems).
+- Scheduled and notified maintenance.
+- Beta or pre-release features explicitly labeled as such.
+
+## Credit process
+
+- Credits must be requested within **30 days** of the incident.
+- Credits are applied to the next invoice and do not exceed the fees paid for the affected service in the month of the incident.
+- Credits are the sole remedy for SLA breaches under this document.
+
+## Contact
+
+- Operations and incident contact: [ops@courtix.com](mailto:ops@courtix.com)
+- General support: [support@courtix.com](mailto:support@courtix.com)
+- Phone (business hours): [+1 (830) 293-3496](tel:+18302933496)

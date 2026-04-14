@@ -1,0 +1,28 @@
+---
+title: "HIPAA-aligned patient portal for a specialty clinic group"
+client: "Undisclosed US clinic group"
+industry: "Healthcare"
+summary: "A secure patient portal with appointment management, document exchange and audit-ready access logging, deployed on AWS with end-to-end encryption."
+stack: ["Next.js", "TypeScript", "AWS", "PostgreSQL", "KMS", "Terraform"]
+duration: "8 months"
+year: 2024
+outcomeHeadline: "HIPAA audit passed on first review"
+---
+
+## The challenge
+
+A growing specialty clinic group wanted to offer modern digital services to their patients without tripping over HIPAA requirements or their existing EHR integration contract. The previous vendor&rsquo;s portal was unmaintained, ugly and had no audit trail.
+
+## Our approach
+
+- Architected around AWS primitives: RDS with KMS-managed encryption, WAF in front of CloudFront, signed S3 URLs for documents.
+- Implemented append-only audit logging at the database and application level, with tamper-evident checksums.
+- Built an access-control layer with role hierarchies matching the clinic&rsquo;s organisation.
+- Shipped a clean, accessible Next.js frontend that actually helps patients find what they need.
+
+## Outcome
+
+- **HIPAA audit passed** on first review — zero findings
+- **Patient adoption** reached 68% within three months
+- **Support calls** about portal issues dropped 80%
+- Every access to patient data is auditable and attributable

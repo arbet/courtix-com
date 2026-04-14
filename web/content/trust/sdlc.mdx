@@ -1,0 +1,165 @@
+---
+title: "Secure Software Development Lifecycle (SDLC) Policy"
+description: "How Courtix Hosting LLC designs, builds, tests, releases and operates software securely."
+updated: "2026-04-14"
+version: "1.0"
+---
+
+## 1. Purpose and scope
+
+This policy defines the secure Software Development Lifecycle (SDLC) that **Courtix Hosting LLC** follows for every engagement. It applies to all software that we design, develop, deploy or operate, whether for a client, for our own infrastructure, or as an internal tool.
+
+The goal of this policy is to:
+
+- Identify and mitigate security risks early in the development process.
+- Produce software that is secure by design and by default.
+- Meet the expectations of enterprise buyers, auditors and regulated-industry clients.
+- Provide a defensible, repeatable process that can be reviewed by third parties.
+
+This policy is reviewed at least annually and after any material change in our development practices or regulatory environment.
+
+## 2. Roles and responsibilities
+
+- **Engineering Lead** — owns the SDLC for each project, approves architecture and release decisions.
+- **Developers** — follow the SDLC controls, raise risks, and complete required reviews.
+- **Security Contact** — maintains this policy, coordinates incident response and tracks vulnerability remediation.
+- **Client Sponsor** — approves scope changes, accepts deliverables, and is notified of security-relevant events affecting their system.
+
+## 3. SDLC phases
+
+### 3.1 Plan
+
+- Requirements gathering with explicit **security and privacy requirements**.
+- Identification of regulated data (PII, PHI, PCI, financial records) and applicable controls.
+- Definition of service-level objectives (availability, latency, RPO/RTO).
+
+### 3.2 Design
+
+- Lightweight **threat modelling** (STRIDE) for each new system or significant change.
+- Data-flow diagrams with trust boundaries explicitly drawn.
+- Selection of authentication, authorization, encryption and key management approaches.
+- Architecture review by a second engineer before implementation begins.
+
+### 3.3 Implement
+
+- All code is written following internal secure coding standards aligned with **OWASP ASVS** and the **CWE Top 25**.
+- Secrets are never committed to source control; we use environment secrets managers (Cloudflare secrets, AWS Secrets Manager, or client-approved equivalents).
+- All new dependencies are reviewed for licence, maintenance status and known vulnerabilities before adoption.
+
+### 3.4 Review
+
+- Every change merged to the main branch goes through **pull request review** by at least one engineer who did not author the change.
+- Main branches are protected: no force-push, required status checks, required reviews.
+- Security-sensitive changes (authentication, authorization, cryptography, payments, data access) require an additional review from the engineering lead or security contact.
+
+### 3.5 Test
+
+Every change is validated by a combination of automated and manual testing:
+
+- **Unit tests** for business logic.
+- **Integration tests** for system boundaries and external services.
+- **Static Application Security Testing (SAST)** run in CI on every pull request.
+- **Dependency scanning** on every build (SCA — software composition analysis).
+- **Dynamic Application Security Testing (DAST)** on staging environments before production releases for any system handling regulated data.
+- **Manual security review** for net-new features that touch authentication, authorization or payments.
+
+## 4. Secure coding standards
+
+All developers follow internal standards derived from:
+
+- [OWASP ASVS](https://owasp.org/www-project-application-security-verification-standard/) — Application Security Verification Standard.
+- [OWASP Top 10](https://owasp.org/www-project-top-ten/) — common web application risks.
+- [CWE Top 25](https://cwe.mitre.org/top25/) — most dangerous software weaknesses.
+
+Specific baseline requirements:
+
+- Parameterised queries and prepared statements only — no string concatenation in SQL.
+- Output encoding for every rendering context (HTML, attribute, JS, URL).
+- Input validation at trust boundaries with allow-lists where practical.
+- CSRF protection on every state-changing endpoint.
+- Authentication and session management follow OWASP ASVS Level 2 at minimum.
+- TLS 1.2 or higher for all transport, with HSTS on public endpoints.
+
+## 5. Dependency management
+
+- All direct dependencies are pinned to exact versions.
+- Lockfiles (pnpm-lock.yaml, go.sum, requirements.txt with hashes) are committed.
+- Automated dependency update tools (Dependabot, Renovate) are configured for every project.
+- Critical vulnerabilities (CVSS ≥ 9.0) are triaged within **24 hours** of disclosure.
+- A Software Bill of Materials (**SBOM**) is generated for every release of systems we operate.
+
+## 6. Secrets management
+
+- Secrets are never stored in source control, plain-text config files or CI logs.
+- Local development uses developer-specific credentials with least privilege.
+- Production secrets are stored in the platform secret store and rotated at least annually, or immediately on suspected compromise.
+- Pre-commit hooks and CI scans are in place to prevent accidental secret commits.
+
+## 7. Release management
+
+- Releases are made from a protected main branch after all required CI checks pass.
+- Infrastructure changes are made via **infrastructure-as-code** (Terraform / Wrangler) and reviewed like application code.
+- Every production release is tagged, changelogged and attributable to a specific author and reviewer.
+- High-risk releases include a rollback plan documented before deployment.
+- Client sponsors are notified of material releases in advance where applicable.
+
+## 8. Operational security
+
+### 8.1 Access control
+
+- Access to client production systems is least-privilege and time-bound where possible.
+- All access requires multi-factor authentication.
+- Privileged access is logged and reviewed.
+
+### 8.2 Monitoring and logging
+
+- Structured application logs are shipped to a centralised system with retention appropriate to regulatory requirements.
+- Security-relevant events (authentication failures, privilege changes, data access) are logged separately with tamper-evident integrity where the platform supports it.
+- Alerting is defined for the indicators that the team would actually act on — no noise dashboards.
+
+### 8.3 Vulnerability management
+
+- New vulnerabilities affecting our software or dependencies are tracked to resolution.
+- Target remediation times:
+  - **Critical** (CVSS ≥ 9.0): within 7 days.
+  - **High** (7.0 – 8.9): within 30 days.
+  - **Medium** (4.0 – 6.9): within 90 days.
+  - **Low** (< 4.0): at the next scheduled maintenance window.
+
+## 9. Incident response
+
+- A written incident response runbook is maintained and rehearsed at least annually.
+- Incidents are classified by severity and scope.
+- Affected clients are notified **within 72 hours** of confirmation for any incident that materially affects the confidentiality, integrity or availability of their data.
+- A post-incident review is produced for every Sev-1 and Sev-2 incident, including root cause, timeline and corrective actions.
+
+## 10. Change management
+
+- All changes to production systems go through pull request review, CI and automated deployment.
+- Emergency fixes follow an expedited path with post-hoc review within 24 hours.
+- No ad-hoc changes are made directly on production servers.
+
+## 11. Training and awareness
+
+- All engineers complete an onboarding security briefing before touching client systems.
+- Annual refresher training covers current OWASP risks, social engineering and incident reporting procedures.
+- New engineers are paired with an experienced reviewer for their first month.
+
+## 12. Decommissioning
+
+When a system is retired:
+
+- Data is exported or deleted according to client instructions and our data retention policy.
+- Cryptographic keys are destroyed.
+- Infrastructure is torn down through the same infrastructure-as-code process that created it.
+- A decommissioning record is retained for audit purposes.
+
+## 13. Policy review
+
+This policy is reviewed and approved by the Engineering Lead at least once per year. Material changes are version-controlled and communicated to all engineers. The policy version number and "last updated" date at the top of this page reflect the currently-approved version.
+
+---
+
+**Current version:** 1.0 · **Last reviewed:** 14 April 2026 · **Next scheduled review:** 14 April 2027
+
+For questions about this policy, or to request a signed copy for procurement review, contact [security@courtix.com](mailto:security@courtix.com).
