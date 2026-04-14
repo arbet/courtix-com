@@ -1,8 +1,9 @@
+import Link from "next/link";
 import { Workflow } from "lucide-react";
 import { ServiceDetail } from "@/components/marketing/ServiceDetail";
 import { ScopingPath } from "@/components/marketing/ScopingPath";
 import { CTABand } from "@/components/marketing/CTABand";
-import { FAQ } from "@/components/marketing/FAQ";
+import { FAQ, type FaqItem } from "@/components/marketing/FAQ";
 import { FaqJsonLd, ServiceJsonLd, BreadcrumbJsonLd } from "@/components/seo/StructuredData";
 import { buildMetadata } from "@/lib/metadata";
 
@@ -13,7 +14,7 @@ export const metadata = buildMetadata({
   path: "/services/platform-reliability",
 });
 
-const faqs = [
+const faqs: FaqItem[] = [
   {
     q: "Where do you deploy production workloads?",
     a: "Primarily Cloudflare and AWS. We’re cloud-pragmatic: the right platform depends on the workload, compliance requirements and the client’s existing commitments. Our applications are built on standard modern web technologies so they travel cleanly between platforms.",
@@ -23,8 +24,8 @@ const faqs = [
     a: "Yes. PostgreSQL, MySQL and Redis are our most common managed offerings, provisioned via infrastructure-as-code and monitored alongside the application. Backups, point-in-time recovery and patching are included.",
   },
   {
-    q: "Do you take on on-call?",
-    a: "For systems we operate, yes. We run a documented on-call rotation with paging, escalation and post-incident review. For systems operated by the client, we help set the same practices up and train the team.",
+    q: "Who responds when a production system breaks at 3am?",
+    a: "For systems we operate, we do. We run a documented on-call rotation with paging, escalation paths and written runbooks, with 30-minute Sev-1 response during business hours or 24/7 under a contracted rotation. For systems operated by your team, we help you stand up the same practices and train the people carrying the pager. (‘On-call’ is the standard engineering term for the person currently responsible for responding to production incidents.)",
   },
   {
     q: "What does ‘observability-first’ mean in practice?",
@@ -36,7 +37,20 @@ const faqs = [
   },
   {
     q: "What’s your uptime target?",
-    a: "We target 99.9% monthly uptime for production workloads with 30-minute Sev-1 response during business hours, or 24×7 with a contracted on-call rotation. See our [SLA](/trust/sla) for full details.",
+    a: "We target 99.9% monthly uptime for production workloads with 30-minute Sev-1 response during business hours, or 24×7 with a contracted on-call rotation. See our SLA for full details.",
+    aRich: (
+      <>
+        We target 99.9% monthly uptime for production workloads with 30-minute Sev-1 response
+        during business hours, or 24×7 with a contracted on-call rotation. See our{" "}
+        <Link
+          href="/trust/sla"
+          className="text-brand-300 underline-offset-4 hover:text-brand-200 hover:underline"
+        >
+          SLA
+        </Link>{" "}
+        for full details.
+      </>
+    ),
   },
   {
     q: "What are your RPO and RTO targets?",
@@ -75,7 +89,7 @@ export default function PlatformReliabilityPage() {
         included={[
           "CI/CD pipeline design and implementation",
           "Infrastructure-as-code provisioning and review",
-          "Deployment automation on Cloudflare and AWS",
+          "Deployment automation on any major cloud provider",
           "Managed PostgreSQL, MySQL and Redis",
           "WAF, DDoS and bot protection in front of production",
           "Automated backups and point-in-time recovery",

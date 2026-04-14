@@ -1,9 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { Plus, Minus } from "lucide-react";
 
-export type FaqItem = { q: string; a: string };
+export type FaqItem = {
+  q: string;
+  /** Plain-text answer. Used by FaqJsonLd for Schema.org FAQPage. */
+  a: string;
+  /** Optional rich answer (JSX, with Links). If provided, rendered instead of `a` in the visible FAQ. */
+  aRich?: ReactNode;
+};
 
 export function FAQ({ items, title = "Frequently asked questions" }: { items: FaqItem[]; title?: string }) {
   const [open, setOpen] = useState<number | null>(0);
@@ -47,7 +53,7 @@ export function FAQ({ items, title = "Frequently asked questions" }: { items: Fa
                   }`}
                 >
                   <div className="min-h-0 overflow-hidden">
-                    <div className="px-5 pb-5 text-sm leading-relaxed text-fg-muted">{item.a}</div>
+                    <div className="px-5 pb-5 text-sm leading-relaxed text-fg-muted">{item.aRich ?? item.a}</div>
                   </div>
                 </div>
               </div>
