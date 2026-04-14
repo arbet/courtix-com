@@ -19,7 +19,7 @@ const faqs = [
   },
   {
     q: "Can you build an internal API platform?",
-    a: "Yes — from auth and rate limiting to developer portals, schema registries and OpenAPI-driven client generation. We’ve delivered internal API platforms for both fast-growing startups and enterprises modernising a service-oriented architecture.",
+    a: "Yes, from auth and rate limiting to developer portals, schema registries and OpenAPI-driven client generation. We’ve delivered internal API platforms for both fast-growing startups and enterprises modernising a service-oriented architecture.",
   },
   {
     q: "REST or GraphQL?",
@@ -46,7 +46,7 @@ export default function ApiIntegrationPage() {
       <ServiceDetail
         eyebrow="API Integration"
         title="Systems that actually talk to each other."
-        description="We design, build and maintain the APIs and integrations that move data between the systems your business runs on — so your team stops doing it manually."
+        description="We design, build and maintain the APIs and integrations that move data between the systems your business runs on, so your team stops doing it manually."
         priceFrom="From $500"
         priceNote="Per engagement, quoted in USD"
         icon={Cable}

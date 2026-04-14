@@ -59,7 +59,7 @@ const pillars = [
     icon: ShieldCheck,
     title: "Secure by default",
     description:
-      "Every project follows our Secure SDLC policy — threat modeling, code review, SAST/DAST and SBOM tracking before release.",
+      "Every project follows our Secure SDLC policy, threat modeling, code review, SAST/DAST and SBOM tracking before release.",
   },
   {
     icon: GaugeCircle,
@@ -96,7 +96,7 @@ const pillars = [
 const homeFaqs = [
   {
     q: "What kind of projects do you take on?",
-    a: "We focus on custom software engineering — cloud-native applications, APIs, platforms and integrations. Typical projects range from a focused 4-week build to long-running platform engagements. We work best with teams that have clear business goals and need senior engineers who can own a system end-to-end.",
+    a: "We focus on custom software engineering, cloud-native applications, APIs, platforms and integrations. Typical projects range from a focused 4-week build to long-running platform engagements. We work best with teams that have clear business goals and need senior engineers who can own a system end-to-end.",
   },
   {
     q: "Who is the legal entity behind Courtix?",
@@ -104,7 +104,7 @@ const homeFaqs = [
   },
   {
     q: "Which technology stack do you use?",
-    a: "TypeScript and JavaScript on Node.js, with React and Next.js for frontends. Python (Django, FastAPI) for data, AI and service workloads. PostgreSQL, Redis and MongoDB for state. We build on web standards — Fetch, Web Streams, WebSockets, Service Workers — so our code travels cleanly between browser, Node and edge runtimes. We pick the right tool for the job and avoid lock-in.",
+    a: "TypeScript and JavaScript on Node.js, with React and Next.js for frontends. Python (Django, FastAPI) for data, AI and service workloads. PostgreSQL, Redis and MongoDB for state. We build on web standards (Fetch, Web Streams, WebSockets, Service Workers) so our code travels cleanly between browser, Node and edge runtimes. We pick the right tool for the job and avoid lock-in.",
   },
   {
     q: "How do payments work?",
@@ -112,7 +112,7 @@ const homeFaqs = [
   },
   {
     q: "Do you deploy on Cloudflare and AWS?",
-    a: "Yes — they are the two platforms we deploy on most. Our applications are built on standard modern web technologies — TypeScript, React, Next.js, Python, PostgreSQL — which run cleanly on both Cloudflare and AWS. We choose the platform per workload based on latency, compliance and the client’s existing commitments.",
+    a: "Yes, they are the two platforms we deploy on most. Our applications are built on standard modern web technologies (TypeScript, React, Next.js, Python, PostgreSQL) which run cleanly on both Cloudflare and AWS. We choose the platform per workload based on latency, compliance and the client’s existing commitments.",
   },
   {
     q: "How do you handle security and compliance?",
@@ -147,7 +147,7 @@ export default async function HomePage() {
           className="absolute inset-0 -z-20 bg-[radial-gradient(ellipse_75%_55%_at_50%_0%,rgba(37,99,235,0.22),transparent_65%),radial-gradient(ellipse_60%_45%_at_50%_100%,rgba(139,92,246,0.14),transparent_70%)]"
         />
         <div aria-hidden className="absolute inset-0 -z-10 grid-bg opacity-[0.18] [mask-image:radial-gradient(ellipse_70%_60%_at_center,black_40%,transparent_85%)]" />
-        {/* corner crop marks — subtle editorial detail */}
+        {/* corner crop marks, subtle editorial detail */}
         <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 mx-auto h-px w-24 bg-gradient-to-r from-transparent via-brand-400/60 to-transparent" />
         <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 mx-auto h-px w-24 bg-gradient-to-r from-transparent via-brand-400/40 to-transparent" />
 
@@ -189,7 +189,7 @@ export default async function HomePage() {
           <SectionHeading
             eyebrow="Selected work"
             title="Software that went to production."
-            description="A small slice of recent engagements. Real projects are under NDA — reach out if you’d like a reference call."
+            description="Representative engagements across the industries we serve. Most client work is under NDA. Reference calls available on request."
           />
           <Link href="/portfolio" className="btn-ghost shrink-0">
             All case studies <ArrowRight className="h-4 w-4" />

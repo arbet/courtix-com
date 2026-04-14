@@ -19,7 +19,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         title="Tell us about your project."
-        description="A senior engineer replies to every enquiry within one business day. No forms-before-forms, no pitches — just a real conversation."
+        description="A senior engineer replies to every enquiry within one business day. No forms-before-forms, no pitches, just a real conversation."
       />
 
       <section className="container-max my-16">

@@ -13,7 +13,7 @@ const platforms = [
   {
     name: "Cloudflare",
     role: "Edge network & production CDN",
-    body: "We run production workloads behind Cloudflare’s global network — CDN, WAF, DDoS mitigation, DNS, Turnstile and Zero Trust. We deploy applications across Cloudflare’s developer platform for clients whose workloads fit an edge-first architecture.",
+    body: "We run production workloads behind Cloudflare’s global network: CDN, WAF, DDoS mitigation, DNS, Turnstile and Zero Trust. We deploy applications across Cloudflare’s developer platform for clients whose workloads fit an edge-first architecture.",
   },
   {
     name: "Amazon Web Services",
@@ -28,7 +28,7 @@ const platforms = [
   {
     name: "Wise",
     role: "Card payment processing",
-    body: "We accept Visa and Mastercard through Wise, a regulated Electronic Money Institution (FCA firm reference 900507). All cardholder data is handled by Wise under PCI DSS — we never store card details.",
+    body: "We accept Visa and Mastercard through Wise, a regulated Electronic Money Institution (FCA firm reference 900507). All cardholder data is handled by Wise under PCI DSS, we never store card details.",
   },
   {
     name: "GitHub",

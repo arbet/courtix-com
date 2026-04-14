@@ -8,14 +8,14 @@ import { siteConfig } from "@/lib/site.config";
 
 export const metadata = buildMetadata({
   title: "About",
-  description: "About Courtix — a software engineering firm building enterprise software worldwide.",
+  description: "About Courtix, a software engineering firm building enterprise software worldwide.",
   path: "/about",
 });
 
 const values = [
   {
     title: "Transparency",
-    body: "No hidden fees, no scope surprises. You always know where your project stands — and why.",
+    body: "No hidden fees, no scope surprises. You always know where your project stands, and why.",
   },
   {
     title: "Accountability",
@@ -48,8 +48,8 @@ export default function AboutPage() {
             <h2>Who we are</h2>
             <p>
               Courtix is a software engineering firm that builds custom software, cloud infrastructure and
-              integrations for businesses of every size — from Series A startups launching their first platform to
-              established enterprises modernising decades of accumulated systems.
+              integrations for businesses of every size, from Series A startups launching their first platform all
+              the way to established enterprises modernising decades of accumulated systems.
             </p>
             <p>
               We started with a simple idea: clients deserve development partners who understand both the technical
@@ -60,7 +60,7 @@ export default function AboutPage() {
             <p>
               Our team brings together experienced developers, SREs and project managers who have delivered
               production software across fintech, e-commerce, healthcare, logistics, AI and SaaS. Every engagement
-              is owned end-to-end by the people who design, build, ship and operate the system — no hand-offs, no
+              is owned end-to-end by the people who design, build, ship and operate the system. No hand-offs, no
               dropped context.
             </p>
           </div>

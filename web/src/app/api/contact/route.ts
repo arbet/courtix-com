@@ -51,7 +51,7 @@ export async function POST(req: Request) {
           from,
           to,
           reply_to: payload.email,
-          subject: `New Courtix enquiry — ${payload.name}${payload.company ? ` (${payload.company})` : ""}`,
+          subject: `New Courtix enquiry, ${payload.name}${payload.company ? ` (${payload.company})` : ""}`,
           text: [
             `Name: ${payload.name}`,
             `Email: ${payload.email}`,
@@ -62,7 +62,7 @@ export async function POST(req: Request) {
             "",
             payload.message,
             "",
-            "— Submitted from courtix.com/contact with policy acknowledgement.",
+            "Submitted from courtix.com/contact with policy acknowledgement.",
           ].join("\n"),
         }),
       });
@@ -75,7 +75,7 @@ export async function POST(req: Request) {
       );
     }
   } else {
-    // No mailer configured — log server-side so the message isn't lost in dev.
+    // No mailer configured, log server-side so the message isn't lost in dev.
     console.info("[contact][no-mailer]", payload);
   }
 

@@ -19,7 +19,7 @@ export default async function PortfolioIndex() {
       <PageHero
         eyebrow="Portfolio"
         title="Software that went to production."
-        description="A selection of recent engagements. Client names are redacted where engagements are under NDA — reference calls available on request."
+        description="A selection of recent engagements. Client names are redacted where engagements are under NDA, reference calls available on request."
       />
       <section className="container-max my-12">
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">

@@ -17,11 +17,11 @@ export default async function BlogIndex() {
       <PageHero
         eyebrow="Blog"
         title="Engineering notes."
-        description="Short writeups on how we build and operate software — published so clients and partners can see how we think."
+        description="Short writeups on how we build and operate software, published so clients and partners can see how we think."
       />
       <section className="container-max my-12 max-w-3xl">
         {posts.length === 0 ? (
-          <p className="text-sm text-fg-muted">No posts yet — watch this space.</p>
+          <p className="text-sm text-fg-muted">No posts yet, watch this space.</p>
         ) : (
           <ul className="divide-y divide-border-subtle overflow-hidden rounded-2xl border border-border-subtle bg-surface-1/40">
             {posts.map((p) => (

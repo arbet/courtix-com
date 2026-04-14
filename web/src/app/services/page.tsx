@@ -24,7 +24,7 @@ const services = [
     icon: Cable,
     title: "API Integration",
     description:
-      "Connect the systems your business already runs on — and automate the work between them.",
+      "Connect the systems your business already runs on, and automate the work between them.",
     href: "/services/api-integration",
     bullets: ["Third-party APIs", "Event-driven workflows", "ETL pipelines"],
   },
@@ -45,7 +45,7 @@ export default function ServicesPage() {
       <PageHero
         eyebrow="Services"
         title="Engineering, hosted and operated by the same team."
-        description="Courtix delivers software as a vertical stack — design, development, deployment and operation — so you get one team accountable from sketch to production."
+        description="Courtix delivers software as a vertical stack: design, development, deployment and operation. You get one team accountable from sketch to production."
       />
       <section className="container-max my-16">
         <FeatureGrid features={services} columns={3} />

@@ -7,7 +7,7 @@ import { buildMetadata } from "@/lib/metadata";
 
 export const metadata = buildMetadata({
   title: "Trust Center",
-  description: "Courtix Trust Center — secure SDLC, security posture, SLA and compliance documentation for enterprise buyers.",
+  description: "Courtix Trust Center, secure SDLC, security posture, SLA and compliance documentation for enterprise buyers.",
   path: "/trust",
 });
 
@@ -15,7 +15,7 @@ const sections = [
   {
     icon: ShieldCheck,
     title: "Secure SDLC Policy",
-    description: "The written, versioned process we follow on every engagement — design, build, review, ship and operate.",
+    description: "The written, versioned process we follow on every engagement, design, build, review, ship and operate.",
     href: "/trust/sdlc",
   },
   {
@@ -51,7 +51,7 @@ export default function TrustHub() {
       <BreadcrumbJsonLd items={[{ name: "Home", href: "/" }, { name: "Trust Center", href: "/trust" }]} />
       <PageHero
         eyebrow="Trust Center"
-        title="Security, reliability and compliance — in writing."
+        title="Security, reliability and compliance, in writing."
         description="Enterprise buyers shouldn’t have to take us at our word. Every policy, control and commitment is published here and available for procurement review."
       />
 

@@ -27,7 +27,7 @@ export function Hero() {
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-fg-muted text-pretty">
             Courtix builds, deploys and operates mission-critical software for companies that
             can’t afford downtime. Custom applications, cloud-native APIs and managed edge
-            infrastructure — designed, shipped and supported by a senior engineering team that owns
+            infrastructure, designed, shipped and supported by a senior engineering team that owns
             every system end-to-end.
           </p>
 

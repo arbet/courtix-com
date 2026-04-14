@@ -57,7 +57,7 @@ export default function PlatformReliabilityPage() {
       <ServiceDetail
         eyebrow="Platform & Reliability Engineering"
         title="Ship faster. Stay up. Sleep at night."
-        description="We build and operate the platform underneath your software — CI/CD, infrastructure-as-code, managed data, observability, DDoS protection and on-call rotations — so your product engineers can focus on shipping features, not fighting fires."
+        description="We build and operate the platform underneath your software: CI/CD, infrastructure-as-code, managed data, observability, DDoS protection and on-call rotations, so your product engineers can focus on shipping features, not fighting fires."
         icon={Workflow}
         included={[
           "CI/CD pipeline design and implementation",
@@ -75,7 +75,7 @@ export default function PlatformReliabilityPage() {
         outcomes={[
           {
             title: "Faster, safer releases",
-            description: "Trunk-based delivery with protected main and automated rollbacks — so shipping isn’t scary.",
+            description: "Trunk-based delivery with protected main and automated rollbacks, so shipping isn’t scary.",
           },
           {
             title: "Fewer surprise outages",

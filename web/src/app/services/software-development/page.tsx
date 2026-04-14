@@ -75,7 +75,7 @@ export default function SoftwareDevelopmentPage() {
           },
           {
             title: "Production-ready from day one",
-            description: "Secure SDLC, observability, backups and infrastructure-as-code — not an afterthought.",
+            description: "Secure SDLC, observability, backups and infrastructure-as-code, not an afterthought.",
           },
         ]}
         stack={[

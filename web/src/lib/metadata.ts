@@ -15,7 +15,7 @@ export function buildMetadata({
   ogImage = siteConfig.ogImage,
 }: PageMetaInput = {}): Metadata {
   const url = new URL(path, siteConfig.url).toString();
-  const fullTitle = title ? `${title} — ${siteConfig.name}` : `${siteConfig.name} — ${siteConfig.tagline}`;
+  const fullTitle = title ? `${title} · ${siteConfig.name}` : `${siteConfig.name} · ${siteConfig.tagline}`;
   return {
     metadataBase: new URL(siteConfig.url),
     title: fullTitle,

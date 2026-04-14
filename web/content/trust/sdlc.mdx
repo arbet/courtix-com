@@ -20,10 +20,10 @@ This policy is reviewed at least annually and after any material change in our d
 
 ## 2. Roles and responsibilities
 
-- **Engineering Lead** — owns the SDLC for each project, approves architecture and release decisions.
-- **Developers** — follow the SDLC controls, raise risks, and complete required reviews.
-- **Security Contact** — maintains this policy, coordinates incident response and tracks vulnerability remediation.
-- **Client Sponsor** — approves scope changes, accepts deliverables, and is notified of security-relevant events affecting their system.
+- **Engineering Lead**: owns the SDLC for each project, approves architecture and release decisions.
+- **Developers**: follow the SDLC controls, raise risks, and complete required reviews.
+- **Security Contact**: maintains this policy, coordinates incident response and tracks vulnerability remediation.
+- **Client Sponsor**: approves scope changes, accepts deliverables, and is notified of security-relevant events affecting their system.
 
 ## 3. SDLC phases
 
@@ -59,7 +59,7 @@ Every change is validated by a combination of automated and manual testing:
 - **Unit tests** for business logic.
 - **Integration tests** for system boundaries and external services.
 - **Static Application Security Testing (SAST)** run in CI on every pull request.
-- **Dependency scanning** on every build (SCA — software composition analysis).
+- **Dependency scanning** on every build (SCA, software composition analysis).
 - **Dynamic Application Security Testing (DAST)** on staging environments before production releases for any system handling regulated data.
 - **Manual security review** for net-new features that touch authentication, authorization or payments.
 
@@ -67,13 +67,13 @@ Every change is validated by a combination of automated and manual testing:
 
 All developers follow internal standards derived from:
 
-- [OWASP ASVS](https://owasp.org/www-project-application-security-verification-standard/) — Application Security Verification Standard.
-- [OWASP Top 10](https://owasp.org/www-project-top-ten/) — common web application risks.
-- [CWE Top 25](https://cwe.mitre.org/top25/) — most dangerous software weaknesses.
+- [OWASP ASVS](https://owasp.org/www-project-application-security-verification-standard/), Application Security Verification Standard.
+- [OWASP Top 10](https://owasp.org/www-project-top-ten/), common web application risks.
+- [CWE Top 25](https://cwe.mitre.org/top25/), most dangerous software weaknesses.
 
 Specific baseline requirements:
 
-- Parameterised queries and prepared statements only — no string concatenation in SQL.
+- Parameterised queries and prepared statements only, no string concatenation in SQL.
 - Output encoding for every rendering context (HTML, attribute, JS, URL).
 - Input validation at trust boundaries with allow-lists where practical.
 - CSRF protection on every state-changing endpoint.
@@ -115,7 +115,7 @@ Specific baseline requirements:
 
 - Structured application logs are shipped to a centralised system with retention appropriate to regulatory requirements.
 - Security-relevant events (authentication failures, privilege changes, data access) are logged separately with tamper-evident integrity where the platform supports it.
-- Alerting is defined for the indicators that the team would actually act on — no noise dashboards.
+- Alerting is defined for the indicators that the team would actually act on, no noise dashboards.
 
 ### 8.3 Vulnerability management
 

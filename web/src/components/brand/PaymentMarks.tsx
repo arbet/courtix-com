@@ -1,5 +1,5 @@
 // Full-color card scheme brand marks. REQUIRED by Wise / Visa / Mastercard
-// merchant rules — do not convert to monochrome or replace with text.
+// merchant rules, do not convert to monochrome or replace with text.
 import { cn } from "@/lib/utils";
 
 export function VisaMark({ className, title = "Visa" }: { className?: string; title?: string }) {

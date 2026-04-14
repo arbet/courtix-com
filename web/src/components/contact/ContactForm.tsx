@@ -24,7 +24,7 @@ export function ContactForm() {
         });
         const body = (await res.json()) as { ok: boolean; message?: string };
         if (!res.ok || !body.ok) throw new Error(body.message || "Failed to send");
-        setState({ status: "success", message: "Thanks — we’ll be in touch within one business day." });
+        setState({ status: "success", message: "Thanks, we’ll be in touch within one business day." });
         form.reset();
       } catch (err) {
         setState({ status: "error", message: err instanceof Error ? err.message : "Something went wrong" });
@@ -189,7 +189,7 @@ function TextArea({ label, name, required }: { label: string; name: string; requ
         rows={5}
         required={required}
         className="resize-y rounded-lg border border-border-subtle bg-white/[0.03] px-3 py-2.5 text-fg outline-none transition-colors focus:border-brand-500 focus:bg-white/[0.05]"
-        placeholder="Goals, timeline, tech context — whatever helps us reply usefully."
+        placeholder="Goals, timeline, tech context, whatever helps us reply usefully."
       />
     </label>
   );

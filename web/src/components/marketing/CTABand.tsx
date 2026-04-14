@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 export function CTABand({
   eyebrow = "Ready when you are",
   title = "Let's build something that ships.",
-  description = "Tell us about your project. A senior engineer will reply within one business day — no pitches, no forms-before-forms.",
+  description = "Tell us about your project. A senior engineer will reply within one business day, no pitches, no forms-before-forms.",
   primaryLabel = "Start a project",
   primaryHref = "/contact?intent=start",
   secondaryLabel = "See our work",

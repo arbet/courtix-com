@@ -18,7 +18,7 @@ Every change starts as a short-lived branch off main. Branches usually live for 
 
 ## Reviews are specific
 
-Pull requests are small (usually under 400 lines). Reviewers look at architectural decisions, security-relevant changes and failure modes — not style nits that a formatter could catch. Security-sensitive changes (auth, payments, data access) get a second reviewer by default.
+Pull requests are small (usually under 400 lines). Reviewers look at architectural decisions, security-relevant changes and failure modes, not style nits that a formatter could catch. Security-sensitive changes (auth, payments, data access) get a second reviewer by default.
 
 ## CI is the source of truth
 
@@ -26,7 +26,7 @@ We don&rsquo;t trust a green local build. The CI pipeline runs the same checks o
 
 ## Deployments are boring
 
-Production deploys are triggered by merges to main (for the services that support it) or by tagged releases (for the ones that need a human in the loop). Infrastructure changes go through the same pull request flow, provisioned as code. There is no "someone ssh'd into a box and changed something" path — and that's by design.
+Production deploys are triggered by merges to main (for the services that support it) or by tagged releases (for the ones that need a human in the loop). Infrastructure changes go through the same pull request flow, provisioned as code. There is no "someone ssh'd into a box and changed something" path, and that's by design.
 
 ## On-call is real
 
