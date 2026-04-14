@@ -6,7 +6,7 @@ import { formatDate } from "@/lib/utils";
 
 export const metadata = buildMetadata({
   title: "Blog",
-  description: "Engineering notes from Courtix: how we ship, how we operate, and what we&rsquo;ve learned along the way.",
+  description: "Engineering notes from Courtix: how we ship, how we operate, and what we’ve learned along the way.",
   path: "/blog",
 });
 

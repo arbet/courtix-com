@@ -15,7 +15,7 @@ export const metadata = buildMetadata({
 const faqs = [
   {
     q: "Where do you deploy production workloads?",
-    a: "Primarily Cloudflare and AWS. We&rsquo;re cloud-pragmatic: the right platform depends on the workload, compliance requirements and the client&rsquo;s existing commitments. Our applications are built on standard modern web technologies so they travel cleanly between platforms.",
+    a: "Primarily Cloudflare and AWS. We’re cloud-pragmatic: the right platform depends on the workload, compliance requirements and the client’s existing commitments. Our applications are built on standard modern web technologies so they travel cleanly between platforms.",
   },
   {
     q: "Do you provide managed databases?",
@@ -26,15 +26,15 @@ const faqs = [
     a: "For systems we operate, yes. We run a documented on-call rotation with paging, escalation and post-incident review. For systems operated by the client, we help set the same practices up and train the team.",
   },
   {
-    q: "What does &lsquo;observability-first&rsquo; mean in practice?",
+    q: "What does ‘observability-first’ mean in practice?",
     a: "Structured logs, metrics and traces wired from day one, with dashboards and alerts focused on the indicators your team would actually act on. If an alert fires and nobody does anything, we either fix the alert or delete it.",
   },
   {
     q: "How do you handle DDoS and abuse?",
-    a: "We lean on Cloudflare&rsquo;s network for DDoS mitigation, WAF and bot protection in front of most of our production workloads. Application-layer controls (rate limiting, auth hardening, audit logging) are layered on top.",
+    a: "We lean on Cloudflare’s network for DDoS mitigation, WAF and bot protection in front of most of our production workloads. Application-layer controls (rate limiting, auth hardening, audit logging) are layered on top.",
   },
   {
-    q: "What&rsquo;s your uptime target?",
+    q: "What’s your uptime target?",
     a: "We target 99.9% monthly uptime for production workloads with 30-minute Sev-1 response during business hours, or 24×7 with a contracted on-call rotation. See our [SLA](/trust/sla) for full details.",
   },
 ];
@@ -61,7 +61,7 @@ export default function PlatformReliabilityPage() {
         icon={Workflow}
         included={[
           "CI/CD pipeline design and implementation",
-          "Infrastructure-as-code (Terraform, Pulumi)",
+          "Infrastructure-as-code provisioning and review",
           "Deployment automation on Cloudflare and AWS",
           "Managed PostgreSQL, MySQL and Redis",
           "WAF, DDoS and bot protection in front of production",
@@ -75,7 +75,7 @@ export default function PlatformReliabilityPage() {
         outcomes={[
           {
             title: "Faster, safer releases",
-            description: "Trunk-based delivery with protected main and automated rollbacks — so shipping isn&rsquo;t scary.",
+            description: "Trunk-based delivery with protected main and automated rollbacks — so shipping isn’t scary.",
           },
           {
             title: "Fewer surprise outages",
@@ -87,7 +87,7 @@ export default function PlatformReliabilityPage() {
           },
         ]}
         stack={[
-          "Terraform",
+          "Infrastructure as code",
           "GitHub Actions",
           "Docker",
           "Kubernetes",

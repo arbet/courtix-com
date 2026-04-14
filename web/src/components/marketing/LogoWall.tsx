@@ -7,7 +7,7 @@ export function LogoWall() {
         <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-fg-faint">
           What we build on
         </p>
-        <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-6 md:grid-cols-3 lg:grid-cols-6">
+        <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-6 md:grid-cols-4">
           {siteConfig.infrastructure.map((p) => (
             <div
               key={p.name}

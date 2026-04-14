@@ -24,7 +24,7 @@ export function ContactForm() {
         });
         const body = (await res.json()) as { ok: boolean; message?: string };
         if (!res.ok || !body.ok) throw new Error(body.message || "Failed to send");
-        setState({ status: "success", message: "Thanks — we&rsquo;ll be in touch within one business day." });
+        setState({ status: "success", message: "Thanks — we’ll be in touch within one business day." });
         form.reset();
       } catch (err) {
         setState({ status: "error", message: err instanceof Error ? err.message : "Something went wrong" });
@@ -39,7 +39,7 @@ export function ContactForm() {
     >
       <h2 className="text-xl font-semibold text-fg">Send us a message</h2>
       <p className="mt-1 text-sm text-fg-muted">
-        Share a few details and we&rsquo;ll reply within one business day.
+        Share a few details and we’ll reply within one business day.
       </p>
 
       <div className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -51,7 +51,7 @@ export function ContactForm() {
 
       <div className="mt-4 grid gap-4 sm:grid-cols-2">
         <Select
-          label="Service you&rsquo;re interested in"
+          label="Service you’re interested in"
           name="service"
           options={[
             "Custom Software Development",
@@ -89,7 +89,7 @@ export function ContactForm() {
         <span>
           I have read and agree to the{" "}
           <Link href="/legal/terms" className="text-brand-300 underline-offset-4 hover:underline">
-            Terms &amp; Conditions
+            Terms & Conditions
           </Link>
           ,{" "}
           <Link href="/legal/privacy" className="text-brand-300 underline-offset-4 hover:underline">
@@ -97,7 +97,7 @@ export function ContactForm() {
           </Link>
           , and{" "}
           <Link href="/legal/refund" className="text-brand-300 underline-offset-4 hover:underline">
-            Refund &amp; Cancellation Policy
+            Refund & Cancellation Policy
           </Link>
           . I understand that by submitting this form I am entering into a pre-contractual conversation with
           Courtix Hosting LLC.

@@ -93,8 +93,6 @@ export const siteConfig = {
     { name: "Google Cloud" },
     { name: "Microsoft Azure" },
     { name: "Cloudflare" },
-    { name: "Hetzner" },
-    { name: "DigitalOcean" },
   ],
 } as const;
 

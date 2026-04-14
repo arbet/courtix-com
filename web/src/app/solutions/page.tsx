@@ -51,7 +51,7 @@ export default function SolutionsPage() {
       <PageHero
         eyebrow="Solutions"
         title="Software built for the way your industry actually works."
-        description="We&rsquo;ve delivered production software across regulated and high-stakes industries. Here&rsquo;s where we go deepest."
+        description="We’ve delivered production software across regulated and high-stakes industries. Here’s where we go deepest."
       />
       <section className="container-max my-16">
         <FeatureGrid features={solutions} columns={3} />

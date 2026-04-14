@@ -23,7 +23,7 @@ const values = [
   },
   {
     title: "Craftsmanship",
-    body: "Clean, documented, tested code. We&rsquo;d rather write a simple thing well than an elegant thing poorly.",
+    body: "Clean, documented, tested code. We’d rather write a simple thing well than an elegant thing poorly.",
   },
   {
     title: "Long-term partnerships",
@@ -39,7 +39,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About"
         title="Senior engineering, grown-up process, enterprise-ready."
-        description="Courtix builds mission-critical software for companies that can&rsquo;t afford downtime or shortcuts."
+        description="Courtix builds mission-critical software for companies that can’t afford downtime or shortcuts."
       />
 
       <section className="container-max my-16">
@@ -54,7 +54,7 @@ export default function AboutPage() {
             <p>
               We started with a simple idea: clients deserve development partners who understand both the technical
               and business sides of a project. Too many engagements end with software that technically works but
-              doesn&rsquo;t solve the actual problem. We bridge that gap by putting senior engineers in the room
+              doesn’t solve the actual problem. We bridge that gap by putting senior engineers in the room
               from the first conversation.
             </p>
             <p>

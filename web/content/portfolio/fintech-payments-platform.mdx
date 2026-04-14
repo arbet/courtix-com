@@ -3,7 +3,7 @@ title: "Real-time payments platform for a cross-border fintech"
 client: "Undisclosed fintech (Series B)"
 industry: "Fintech"
 summary: "A high-throughput payments API handling card and bank-rail transactions across 18 countries, built on Cloudflare Workers and PostgreSQL."
-stack: ["TypeScript", "Node.js", "Cloudflare Workers", "PostgreSQL", "Redis", "Terraform"]
+stack: ["TypeScript", "Node.js", "Cloudflare Workers", "PostgreSQL", "Redis"]
 duration: "7 months"
 year: 2025
 outcomeHeadline: "3× throughput at 40% lower infrastructure cost"
@@ -27,7 +27,7 @@ They wanted to rebuild on a modern, globally distributed stack — without takin
 
 - Cloudflare Workers for the edge API, hitting PostgreSQL via Hyperdrive
 - Redis for rate limiting and short-lived idempotency state
-- Terraform-managed infrastructure with environment parity across dev, staging and prod
+- Infrastructure-as-code with environment parity across dev, staging and prod
 - Structured logs and traces shipped to the client&rsquo;s existing observability stack
 
 ## Outcome

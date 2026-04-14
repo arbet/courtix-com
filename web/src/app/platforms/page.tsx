@@ -13,12 +13,12 @@ const platforms = [
   {
     name: "Cloudflare",
     role: "Edge network & production CDN",
-    body: "We run production workloads behind Cloudflare&rsquo;s global network — CDN, WAF, DDoS mitigation, DNS, Turnstile and Zero Trust. We deploy applications across Cloudflare&rsquo;s developer platform for clients whose workloads fit an edge-first architecture.",
+    body: "We run production workloads behind Cloudflare’s global network — CDN, WAF, DDoS mitigation, DNS, Turnstile and Zero Trust. We deploy applications across Cloudflare’s developer platform for clients whose workloads fit an edge-first architecture.",
   },
   {
     name: "Amazon Web Services",
     role: "Cloud platform",
-    body: "We design, build and operate workloads on AWS across EC2, RDS, S3, Lambda, CloudFront, SQS and KMS. Infrastructure is provisioned via Terraform with environment parity from development through production.",
+    body: "We design, build and operate workloads on AWS across EC2, RDS, S3, Lambda, CloudFront, SQS and KMS. Infrastructure is provisioned as code with environment parity from development through production.",
   },
   {
     name: "Stripe",
@@ -49,7 +49,7 @@ export default function PlatformsPage() {
       <PageHero
         eyebrow="Platforms"
         title="The platforms we build on."
-        description="We&rsquo;re deliberate about the platforms we commit to. Each of these is a daily part of how Courtix ships and runs software for clients."
+        description="We’re deliberate about the platforms we commit to. Each of these is a daily part of how Courtix ships and runs software for clients."
       />
 
       <section className="container-max my-16">
@@ -68,8 +68,8 @@ export default function PlatformsPage() {
 
       <CTABand
         eyebrow="Build on any of these?"
-        title="Let&rsquo;s talk about your project."
-        description="If you&rsquo;re shipping on Cloudflare, AWS or any of the platforms above and you need senior engineers to build, ship or operate alongside your team, we&rsquo;d like to hear from you."
+        title="Let’s talk about your project."
+        description="If you’re shipping on Cloudflare, AWS or any of the platforms above and you need senior engineers to build, ship or operate alongside your team, we’d like to hear from you."
         primaryLabel="Start a project"
         primaryHref="/contact?intent=start"
         secondaryLabel="Email us"

@@ -14,11 +14,11 @@ export function FAQ({ items, title = "Frequently asked questions" }: { items: Fa
           <div className="eyebrow">FAQ</div>
           <h2 className="mt-4 text-display-md font-semibold text-balance">{title}</h2>
           <p className="mt-4 text-sm leading-relaxed text-fg-muted">
-            Didn&rsquo;t find what you were looking for? Email{" "}
+            Didn’t find what you were looking for? Email{" "}
             <a className="text-brand-300 hover:text-brand-200" href="mailto:hello@courtix.com">
               hello@courtix.com
             </a>{" "}
-            and we&rsquo;ll get back to you within one business day.
+            and we’ll get back to you within one business day.
           </p>
         </div>
         <div className="space-y-2">

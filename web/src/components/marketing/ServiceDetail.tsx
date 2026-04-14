@@ -45,7 +45,7 @@ export function ServiceDetail({
       <section className="container-max my-16">
         <div className="grid gap-10 lg:grid-cols-[1.3fr_1fr]">
           <div>
-            <div className="eyebrow mb-4">What&rsquo;s included</div>
+            <div className="eyebrow mb-4">What’s included</div>
             <ul className="grid gap-3 sm:grid-cols-2">
               {included.map((i) => (
                 <li key={i} className="flex gap-3 rounded-xl border border-border-subtle bg-surface-1/40 p-4 text-sm text-fg-muted">

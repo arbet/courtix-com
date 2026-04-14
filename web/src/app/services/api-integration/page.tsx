@@ -15,11 +15,11 @@ export const metadata = buildMetadata({
 const faqs = [
   {
     q: "Do you work with legacy systems?",
-    a: "Routinely. We&rsquo;re comfortable integrating with SOAP endpoints, flat-file exchanges, SFTP drops and vendor APIs that were last updated in 2014. We wrap them in clean, tested boundaries so the rest of the system doesn&rsquo;t have to care.",
+    a: "Routinely. We’re comfortable integrating with SOAP endpoints, flat-file exchanges, SFTP drops and vendor APIs that were last updated in 2014. We wrap them in clean, tested boundaries so the rest of the system doesn’t have to care.",
   },
   {
     q: "Can you build an internal API platform?",
-    a: "Yes — from auth and rate limiting to developer portals, schema registries and OpenAPI-driven client generation. We&rsquo;ve delivered internal API platforms for both fast-growing startups and enterprises modernising a service-oriented architecture.",
+    a: "Yes — from auth and rate limiting to developer portals, schema registries and OpenAPI-driven client generation. We’ve delivered internal API platforms for both fast-growing startups and enterprises modernising a service-oriented architecture.",
   },
   {
     q: "REST or GraphQL?",

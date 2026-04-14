@@ -14,7 +14,7 @@ export const metadata = buildMetadata({
 
 const faqs = [
   {
-    q: "What&rsquo;s the smallest engagement you take on?",
+    q: "What’s the smallest engagement you take on?",
     a: "Typically a 4-week scoped build. Anything shorter is usually better served by internal engineers or a specialist freelancer. We do run paid discovery sprints (1–2 weeks) to de-risk larger engagements.",
   },
   {
@@ -71,7 +71,7 @@ export default function SoftwareDevelopmentPage() {
           },
           {
             title: "Predictable delivery",
-            description: "Written scope, milestone billing and weekly demos. You know what&rsquo;s coming and when.",
+            description: "Written scope, milestone billing and weekly demos. You know what’s coming and when.",
           },
           {
             title: "Production-ready from day one",

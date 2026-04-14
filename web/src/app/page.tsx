@@ -32,7 +32,7 @@ const services = [
     icon: Code2,
     title: "Software Development",
     description:
-      "Purpose-built applications, platforms and APIs engineered to your workflow. Senior full-stack team — TypeScript, React and Python.",
+      "Purpose-built applications, platforms and APIs engineered to your workflow. Senior full-stack team working in TypeScript, React and Python.",
     href: "/services/software-development",
     bullets: ["Custom platforms", "Internal tools", "Data systems"],
   },
@@ -50,7 +50,7 @@ const services = [
     description:
       "CI/CD, infrastructure-as-code, managed data, observability, DDoS protection and on-call. Ship faster without trading reliability.",
     href: "/services/platform-reliability",
-    bullets: ["Terraform & CI", "SLO tracking", "Incident response"],
+    bullets: ["Infrastructure as code", "SLO tracking", "Incident response"],
   },
 ];
 
@@ -60,7 +60,6 @@ const pillars = [
     title: "Secure by default",
     description:
       "Every project follows our Secure SDLC policy — threat modeling, code review, SAST/DAST and SBOM tracking before release.",
-    href: "/trust/sdlc",
   },
   {
     icon: GaugeCircle,
@@ -78,7 +77,7 @@ const pillars = [
     icon: LineChart,
     title: "Observable systems",
     description:
-      "Structured logs, traces and metrics wired from day one — not bolted on in an outage. Dashboards you&rsquo;ll actually use.",
+      "Structured logs, traces and metrics wired from day one, not bolted on in an outage. Dashboards you’ll actually use.",
   },
   {
     icon: Lock,
@@ -90,7 +89,7 @@ const pillars = [
     icon: Server,
     title: "Infrastructure as code",
     description:
-      "Terraform and Wrangler for repeatable, reviewable infrastructure. No snowflakes, no &ldquo;works on my box&rdquo;.",
+      "All infrastructure is provisioned and versioned as code, reviewed like application changes. No snowflakes, no “works on my box”.",
   },
 ];
 
@@ -113,7 +112,7 @@ const homeFaqs = [
   },
   {
     q: "Do you deploy on Cloudflare and AWS?",
-    a: "Yes — they are the two platforms we deploy on most. Our applications are built on standard modern web technologies — TypeScript, React, Next.js, Python, PostgreSQL — which run cleanly on both Cloudflare and AWS. We choose the platform per workload based on latency, compliance and the client&rsquo;s existing commitments.",
+    a: "Yes — they are the two platforms we deploy on most. Our applications are built on standard modern web technologies — TypeScript, React, Next.js, Python, PostgreSQL — which run cleanly on both Cloudflare and AWS. We choose the platform per workload based on latency, compliance and the client’s existing commitments.",
   },
   {
     q: "How do you handle security and compliance?",
@@ -141,19 +140,43 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="relative isolate my-24">
-        <div aria-hidden className="absolute inset-0 -z-10 bg-radial-brand opacity-60" />
+      <section className="relative isolate mt-24 border-y border-border-subtle/70 py-24 sm:py-28 lg:py-36">
+        {/* layered backdrop */}
+        <div
+          aria-hidden
+          className="absolute inset-0 -z-20 bg-[radial-gradient(ellipse_75%_55%_at_50%_0%,rgba(37,99,235,0.22),transparent_65%),radial-gradient(ellipse_60%_45%_at_50%_100%,rgba(139,92,246,0.14),transparent_70%)]"
+        />
+        <div aria-hidden className="absolute inset-0 -z-10 grid-bg opacity-[0.18] [mask-image:radial-gradient(ellipse_70%_60%_at_center,black_40%,transparent_85%)]" />
+        {/* corner crop marks — subtle editorial detail */}
+        <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 mx-auto h-px w-24 bg-gradient-to-r from-transparent via-brand-400/60 to-transparent" />
+        <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 mx-auto h-px w-24 bg-gradient-to-r from-transparent via-brand-400/40 to-transparent" />
+
         <div className="container-max">
-          <SectionHeading
-            eyebrow="How we build"
-            title="Principles you can audit."
-            description="Every Courtix engagement is underwritten by the same engineering principles. When enterprise buyers ask how you ship software, you should be able to answer in specifics."
-            align="center"
-          />
-          <div className="mt-12">
+          <div className="mx-auto max-w-3xl text-center">
+            {/* composed eyebrow: flanked by thin rules, with diamond ornament */}
+            <div className="flex items-center justify-center gap-3 text-brand-400">
+              <span className="h-px w-10 bg-gradient-to-r from-transparent to-brand-400/70" aria-hidden />
+              <span className="text-[0.68rem] font-semibold uppercase tracking-[0.28em]">
+                How we build
+              </span>
+              <span className="h-px w-10 bg-gradient-to-l from-transparent to-brand-400/70" aria-hidden />
+            </div>
+
+            <h2 className="mt-7 font-display text-display-lg font-semibold tracking-tight text-balance">
+              Principles you can audit.
+            </h2>
+            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-fg-muted text-pretty sm:text-lg">
+              Every Courtix engagement is underwritten by the same engineering principles. When
+              enterprise buyers ask how you ship software, you should be able to answer in
+              specifics.
+            </p>
+          </div>
+
+          <div className="mt-16 lg:mt-20">
             <FeatureGrid features={pillars} columns={3} />
           </div>
-          <div className="mt-10 flex justify-center">
+
+          <div className="mt-14 flex justify-center">
             <Link href="/trust/sdlc" className="btn-secondary">
               Read our Secure SDLC policy <ArrowRight className="h-4 w-4" />
             </Link>
@@ -166,7 +189,7 @@ export default async function HomePage() {
           <SectionHeading
             eyebrow="Selected work"
             title="Software that went to production."
-            description="A small slice of recent engagements. Real projects are under NDA — reach out if you&rsquo;d like a reference call."
+            description="A small slice of recent engagements. Real projects are under NDA — reach out if you’d like a reference call."
           />
           <Link href="/portfolio" className="btn-ghost shrink-0">
             All case studies <ArrowRight className="h-4 w-4" />

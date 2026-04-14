@@ -52,7 +52,7 @@ export default function TrustHub() {
       <PageHero
         eyebrow="Trust Center"
         title="Security, reliability and compliance — in writing."
-        description="Enterprise buyers shouldn&rsquo;t have to take us at our word. Every policy, control and commitment is published here and available for procurement review."
+        description="Enterprise buyers shouldn’t have to take us at our word. Every policy, control and commitment is published here and available for procurement review."
       />
 
       <section className="container-max my-12">

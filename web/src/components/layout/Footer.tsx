@@ -61,7 +61,7 @@ export function Footer() {
                 Privacy Policy
               </Link>
               <Link href="/legal/refund" className="underline-offset-4 hover:underline hover:text-fg">
-                Refund &amp; Cancellation Policy
+                Refund & Cancellation Policy
               </Link>
             </div>
           </div>

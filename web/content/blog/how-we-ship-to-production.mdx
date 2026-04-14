@@ -26,7 +26,7 @@ We don&rsquo;t trust a green local build. The CI pipeline runs the same checks o
 
 ## Deployments are boring
 
-Production deploys are triggered by merges to main (for the services that support it) or by tagged releases (for the ones that need a human in the loop). Infrastructure changes go through the same pull request flow via Terraform or Wrangler. There is no "someone ssh'd into a box and changed something" path — and that&rsquo;s by design.
+Production deploys are triggered by merges to main (for the services that support it) or by tagged releases (for the ones that need a human in the loop). Infrastructure changes go through the same pull request flow, provisioned as code. There is no "someone ssh'd into a box and changed something" path — and that's by design.
 
 ## On-call is real
 
