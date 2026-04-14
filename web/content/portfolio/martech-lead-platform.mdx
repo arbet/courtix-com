@@ -1,0 +1,38 @@
+---
+title: "Ad intelligence and lead capture platform"
+client: "MarTech SaaS"
+industry: "MarTech"
+summary: "A multi-tenant SaaS platform that monitors ad creative and lead signals across networks, routes qualified leads to customer CRMs and handles metered billing through Stripe."
+stack: ["PHP", "Laravel", "Filament", "PostgreSQL", "AWS S3", "AWS SQS", "Stripe"]
+duration: "6 months"
+year: 2025
+outcomeHeadline: "Multi-tenant SaaS with metered billing from day one"
+---
+
+## The challenge
+
+A MarTech company was building a product that watches ad creative and lead signals across multiple ad networks, qualifies leads with their own rules engine, and pushes the good ones into customer CRMs. Their prototype was a single-tenant script running on a VM. Onboarding a new customer meant spinning up another VM. Billing was a spreadsheet. They needed to turn the prototype into a real multi-tenant SaaS without losing the velocity that had gotten them the first customers.
+
+## Our approach
+
+- Rebuilt the platform on Laravel with Filament as the admin and customer-facing operations layer.
+- Modelled tenants as first-class entities: every data source, every rule, every lead belongs to exactly one tenant and is isolated at the query level.
+- Wired in AWS SQS for async processing of lead-qualification jobs and AWS S3 for artefact storage.
+- Implemented metered billing through Stripe with usage reporting and per-plan limits, so onboarding a new customer is a form, not a VM.
+- Designed the rules engine to be editable by non-engineers — the product team can author and test qualification logic without touching code.
+
+## Architecture highlights
+
+- Laravel + Filament as the platform foundation
+- PostgreSQL with tenant-scoped access controls
+- AWS SQS for asynchronous job processing
+- AWS S3 for artefact and evidence storage
+- Stripe for metered billing and subscription management
+- Rules engine with non-engineer authoring surface
+
+## Outcome
+
+- **Onboarding a customer** dropped from days of manual setup to minutes of form-filling
+- **Metered billing** live from launch; no more spreadsheet reconciliation
+- **Tenant isolation** verifiable at the database and storage layer
+- **Non-engineers ship rule changes** without waiting on an engineering cycle

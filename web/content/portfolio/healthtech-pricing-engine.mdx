@@ -1,0 +1,40 @@
+---
+title: "Dynamic pricing engine for a clinical laboratory network"
+client: "Clinical laboratory group (US)"
+industry: "Healthtech"
+summary: "A multi-tenant pricing engine that calculates test-panel prices in real time from reagent cost, overhead, organisation-specific contract terms and revenue share rules, with full audit history and Excel round-tripping for commercial teams."
+stack: ["TypeScript", "Next.js", "React", "PostgreSQL", "Prisma", "NextAuth", "Zod", "ExcelJS", "Playwright"]
+duration: "5 months"
+year: 2025
+outcomeHeadline: "Every price change is auditable, reproducible and reviewable"
+featured: true
+---
+
+## The challenge
+
+The same clinical laboratory group had a pricing problem. Test-panel pricing depended on dozens of moving parts: the composition of each panel, reagent cost, per-organisation discounts, overhead models, donation accounting and revenue-share agreements with referring networks. All of it lived in spreadsheets that were edited, emailed and forgotten about. When a pricing dispute came up, nobody could reconstruct how a given price had been calculated.
+
+They needed a pricing engine that commercial teams could actually trust: every quote had to be reproducible, every rule change had to be auditable, and every pricing decision had to be defensible if a regulator or an auditor ever asked.
+
+## Our approach
+
+- Modelled the pricing domain explicitly: tests, panels, organisations, contracts, discount rules, overhead models, revenue shares. Every entity versioned, every rule change attributable.
+- Built a Next.js full-stack application with a clean internal API so the pricing logic could be called both from the dashboard and from downstream systems.
+- Added Excel import and export so commercial teams could continue using their spreadsheet workflow while the engine remained the single source of truth.
+- Wrote 160+ automated tests (unit, integration, end-to-end) covering the edge cases the commercial team had spent years fighting — so any future change would fail loudly if it broke a known scenario.
+
+## Architecture highlights
+
+- Next.js 15 App Router on TypeScript, with server-side validation via Zod
+- PostgreSQL schema modelled in Prisma, with versioned pricing rules
+- NextAuth for authentication and role-based access
+- ExcelJS for round-tripping the client's existing spreadsheet format
+- Vitest + Playwright for unit and end-to-end test coverage
+- Audit log recording every price quote and every rule change with full reproducibility
+
+## Outcome
+
+- **Every pricing decision reproducible** from the stored inputs, no matter how far in the past
+- **Commercial team workflow preserved** — Excel in, Excel out — while the engine owns the math
+- **160+ automated tests** covering panel composition, discount stacking, revenue share and overhead edge cases
+- **Pricing disputes resolved** by replaying the audit log rather than guessing

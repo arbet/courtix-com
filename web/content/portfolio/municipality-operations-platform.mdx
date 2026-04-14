@@ -1,0 +1,39 @@
+---
+title: "Operations and citizen services platform for a municipality"
+client: "Regional municipal authority (Middle East)"
+industry: "Govtech"
+summary: "A full-stack administration platform for a municipality covering permits, fees, financial tracking, citizen engagement and granular role-based access control across dozens of internal departments."
+stack: ["PHP", "Laravel", "Filament", "PostgreSQL", "TypeScript", "Alpine.js"]
+duration: "12 months"
+year: 2025
+outcomeHeadline: "One platform replacing a decade of disconnected internal tools"
+---
+
+## The challenge
+
+A regional municipality was running its operations across a patchwork of aging desktop applications, spreadsheets and department-specific databases. Every permit, fee and citizen request moved between departments on paper or by email. Financial reconciliation took weeks. Access control was "whoever asked for a login got a login", which made every audit a scramble.
+
+They wanted one platform to run the municipality on: permits, fees, accounting, citizen-facing services, and department-level workflow — all with the kind of role-based access control a regulator or internal audit team could actually verify.
+
+## Our approach
+
+- Started with a months-long discovery phase mapping every department's existing workflow and data. No two departments did the same thing the same way.
+- Built the platform on Laravel with Filament as the administrative layer, giving us enterprise-grade CRUD, forms, tables and permissions without reinventing any of it.
+- Designed a granular permission model with per-department, per-resource, per-action controls that map directly onto the municipality's real org chart.
+- Implemented audit logging for every financial transaction and every permission change, with read-only export for the internal audit team.
+- Delivered in rolling waves — one department at a time — so the platform was earning its keep before the whole rollout was finished.
+
+## Architecture highlights
+
+- Laravel 12 on PHP 8.3
+- Filament as the admin framework, extended with custom resources and actions
+- PostgreSQL with role-based row-level access
+- Structured audit log for financial and administrative actions
+- Modular module design so new departments can be onboarded without touching existing code
+
+## Outcome
+
+- **Replaced a decade of disconnected internal tools** with one platform covering permits, fees, accounting and citizen services
+- **Department rollout** completed in phased waves so operations were never blocked
+- **Granular RBAC** verifiable by the municipality's internal audit function
+- **Financial reconciliation** compressed from weeks to routine reporting

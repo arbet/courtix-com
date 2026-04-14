@@ -1,0 +1,40 @@
+---
+title: "Internal data population platform for an enterprise operations team"
+client: "Enterprise operations team"
+industry: "Internal platform"
+summary: "A custom data-population and synchronisation platform that lets an enterprise operations team load, reconcile and distribute data across multiple internal systems, with a built-in MCP server so the same data can be queried and mutated by AI assistants."
+stack: ["PHP", "Laravel", "Filament", "PostgreSQL", "AWS S3", "Stripe", "MCP"]
+duration: "6 months"
+year: 2025
+outcomeHeadline: "An internal platform that replaced weeks of manual data ops"
+---
+
+## The challenge
+
+An enterprise operations team was spending weeks every quarter loading, cleaning and synchronising data across a tangle of internal systems. Every update was manual. Every mistake had to be found by hand. Every new data source started with "send us a CSV and we'll figure it out". The team wanted a platform where data could be loaded once, validated, reconciled and then pushed out to wherever it needed to go — with an audit trail for every operation.
+
+They also wanted the platform usable from the AI assistants the team was already adopting, without giving those assistants an unguarded pipe into the underlying database.
+
+## Our approach
+
+- Built the platform on Laravel with Filament as the operational layer — enterprise-grade forms, tables, roles and audit history out of the box.
+- Modelled the data-ingestion pipeline as a sequence of validated, replayable stages so every upload can be retried, compared or rolled back.
+- Implemented a role-based permission model mapped to the team's real organisational structure, with least-privilege access to sensitive data sources.
+- Built a **Model Context Protocol (MCP) server** alongside the platform so the team's AI assistants could safely query and mutate data, subject to the same permission model, without bypassing audit logging.
+- Integrated with AWS S3 for artefact storage and Stripe for internal billing reconciliation.
+
+## Architecture highlights
+
+- Laravel + Filament for the administrative surface
+- PostgreSQL with role-scoped, auditable data access
+- AWS S3 for raw and processed artefact storage
+- Stripe for internal billing reconciliation
+- MCP server exposing a safe, permission-scoped API for AI assistants
+- Audit log covering every upload, every edit, every export
+
+## Outcome
+
+- **Weeks of manual data ops** compressed into a repeatable, auditable workflow
+- **AI assistants safely integrated** through the MCP server, with the same permission model as human users
+- **Every mutation traceable** to a user, a source artefact and a timestamp
+- **New data sources onboarded** without custom code by reusing the validated-stage pipeline

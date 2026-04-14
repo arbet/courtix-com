@@ -1,0 +1,38 @@
+---
+title: "Cross-platform on-demand services marketplace"
+client: "On-demand services operator"
+industry: "Marketplace"
+summary: "A two-sided marketplace connecting service providers with customers, spanning a Laravel backend, native iOS and Android apps built in Flutter, and a real-time booking and messaging layer on top of Firebase."
+stack: ["PHP", "Laravel", "Flutter", "iOS", "Android", "PostgreSQL", "Firebase", "Stripe"]
+duration: "7 months"
+year: 2024
+outcomeHeadline: "Marketplace live on both app stores with real-time bookings"
+---
+
+## The challenge
+
+An on-demand services operator wanted to run a two-sided marketplace: customers book service providers for household work, providers accept and track jobs from their phones, money moves through the platform. Their earlier attempt had failed because the mobile experience was an after-thought and the backend couldn't keep up with real-time booking state. They needed a platform that worked end-to-end across web admin, native mobile and real-time infrastructure.
+
+## Our approach
+
+- Built the backend on Laravel with a versioned REST API sized for mobile clients.
+- Designed and shipped the customer and provider apps in Flutter, publishing to both the Apple App Store and Google Play.
+- Used Firebase for real-time booking state, push notifications and authentication so both sides of the marketplace see the same thing at the same time.
+- Implemented provider onboarding, KYC collection, job assignment, ratings and payout flows as first-class product surfaces, not admin-panel afterthoughts.
+- Integrated Stripe Connect for end-to-end payment flows between customer, platform and provider.
+
+## Architecture highlights
+
+- Laravel REST API designed for mobile-first consumption
+- Flutter for iOS and Android apps from a single codebase
+- Firebase for real-time state, push notifications and authentication
+- PostgreSQL for transactional state of record
+- Stripe Connect for multi-party payment flows
+- Admin panel for operations, dispute handling and manual overrides
+
+## Outcome
+
+- **Live on both app stores** with a single Flutter codebase shared between customer and provider apps
+- **Real-time booking state** across web, iOS and Android with no drift
+- **Provider and customer onboarding** designed as first-class product flows instead of admin forms
+- **Payment flows** handled end-to-end via Stripe Connect

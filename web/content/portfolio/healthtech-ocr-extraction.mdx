@@ -1,0 +1,42 @@
+---
+title: "HIPAA-aligned OCR and extraction pipeline for a clinical lab network"
+client: "Clinical laboratory group (US)"
+industry: "Healthtech"
+summary: "A multi-tenant document intelligence platform that ingests scanned lab test requisitions, extracts structured data with OCR and LLM-assisted mapping, and returns auditable, HIPAA-aligned records to the client's lab information system."
+stack: ["TypeScript", "React", "Python", "Django", "Celery", "PostgreSQL", "Redis", "AWS Textract", "AWS S3", "AWS KMS"]
+duration: "9 months"
+year: 2025
+outcomeHeadline: "HIPAA-aligned pipeline handling requisitions across every US state"
+featured: true
+---
+
+## The challenge
+
+A clinical laboratory network was manually keying hundreds of scanned test requisitions per day into their lab information system. Every form came from a different clinic on a different template, in wildly varying quality: handwritten notes, faxes, photos taken on a phone at a patient bedside. Staff turnover and transcription errors were pushing operational cost up and making every HIPAA audit harder to pass.
+
+They needed a platform that could ingest any document, extract structured data reliably, and produce an auditable record for every field decision — without sending PHI anywhere it wasn't supposed to go.
+
+## Our approach
+
+- Designed a multi-tenant architecture where every client organisation is fully isolated at the database, storage and audit-log layer.
+- Built a staged pipeline: preprocessing (deskew, denoise, normalise), OCR extraction via AWS Textract, LLM-assisted field mapping through a managed inference layer, and structured output validation with schema-level constraints.
+- Wrapped every step in a Celery job with retry, idempotency and per-document audit trails. Every field that lands in the lab system carries a trace back to the source region of the scanned document.
+- Hardened the platform against the HIPAA Security Rule from day one: encryption at rest via KMS, signed-URL S3 access, tenant-scoped access control, tamper-evident audit logging, and a documented data retention and deletion process.
+
+## Architecture highlights
+
+- Django REST API + React/TypeScript frontend
+- Celery + Redis for durable, retryable document processing
+- PostgreSQL with per-tenant schema isolation and row-level access checks
+- AWS Textract + managed LLM APIs behind a pluggable inference layer
+- Append-only audit log with per-document traceability
+- Infrastructure as code, environment parity from dev to prod
+
+## Outcome
+
+- **HIPAA-aligned architecture** reviewed by the client's compliance team and operating in production
+- **Every extracted field is traceable** back to the scanned source region, signed off by user or automated rule
+- **Throughput capacity** matched the lab network's sustained daily volume, with headroom for seasonal spikes
+- **Staff time** on manual data entry dropped dramatically; operations team moved to exception handling instead of keying
+
+*(Specific accuracy and throughput numbers are redacted per engagement; reference calls available on request.)*

@@ -1,0 +1,41 @@
+---
+title: "AI video intelligence platform with async processing at scale"
+client: "Media intelligence SaaS"
+industry: "AI / Media"
+summary: "A production AI platform that ingests long-form video, transcribes and analyses it with managed LLM APIs, and returns structured insights to customers through an async job queue designed to stay up under bursty load."
+stack: ["Python", "FastAPI", "Celery", "Redis", "PostgreSQL", "FFmpeg", "OpenCV", "AWS", "Firebase"]
+duration: "8 months"
+year: 2025
+outcomeHeadline: "Bursty, minute-scale video jobs handled without a single queue stall"
+featured: true
+---
+
+## The challenge
+
+A media intelligence SaaS was building a product that ingests long-form video, transcribes it, runs it through a pipeline of AI analysis steps and returns structured insights to customers. Their v1 was a script. It worked for demos. It fell over under real customer load: jobs timed out mid-pipeline, retries corrupted partial state, costs were impossible to attribute, and observability was a print statement.
+
+They needed a production platform that could take minute-scale video jobs, run them reliably even under bursty load, retry safely, and let the team know which jobs were costing what.
+
+## Our approach
+
+- Replaced the script with a proper FastAPI service backed by Celery and Redis for durable, retryable jobs.
+- Split video processing into discrete, composable stages: ingest, preprocess, transcribe, analyse, synthesise. Each stage idempotent. Each stage independently retryable.
+- Put every stage behind a structured logger so failures could be attributed to a specific job, stage and reason within seconds.
+- Wrapped managed LLM APIs in a pluggable inference layer so the team could swap providers, set cost budgets, and cache prompts where it mattered.
+- Added cost attribution at the job level so the product team could see exactly which customer, which job and which stage was driving spend.
+
+## Architecture highlights
+
+- FastAPI + Celery + Redis for durable async processing
+- PostgreSQL for job metadata, results and audit trail
+- FFmpeg + OpenCV for video preprocessing
+- Managed LLM APIs behind a pluggable inference layer with prompt caching
+- PostHog for product analytics; Firebase for client authentication
+- Per-job cost attribution so spend is traceable to customer and pipeline stage
+
+## Outcome
+
+- **Bursty, minute-scale video jobs** handled without a single queue stall after launch
+- **Per-job cost attribution** gave the product team visibility into unit economics for the first time
+- **Pluggable inference layer** let the team swap LLM providers without touching application code
+- **Observability from day one** — no more "it failed somewhere"
