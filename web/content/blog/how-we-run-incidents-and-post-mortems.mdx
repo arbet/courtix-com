@@ -1,0 +1,62 @@
+---
+title: "How we run incidents and post-mortems at Courtix"
+description: "The operational half of shipping software: how we detect, triage, communicate, and learn from production incidents, with a 24-hour client notification SLA and a blameless review for every major event."
+date: "2026-04-16"
+author: "Courtix Engineering"
+tags: ["engineering", "operations", "incident-response"]
+---
+
+Every team ships bugs. The useful question isn&rsquo;t "do you ever have incidents" (you will), it&rsquo;s "what happens when you do". This post is how Courtix answers that. The formal version lives in our [Secure SDLC Policy](/trust/sdlc).
+
+## The one-sentence version
+
+We detect from alerts that someone will actually act on, triage against a written severity matrix, notify affected clients within 24 hours of confirmation, and produce a blameless post-incident review for every major event.
+
+## Detection is boring on purpose
+
+Alerts that fire when nothing is wrong get ignored, and then they fail to fire when something actually is. We tune hard: every alert has a named owner, a written runbook, and a rule that says "if this pages at 3am and the responder can&rsquo;t act on it, the alert gets fixed or deleted before the next shift".
+
+For systems we operate, we monitor the usual suspects: availability, error rate, latency, queue depth, dependency health. What we alert on is the subset that represents real user pain.
+
+## Severity is a decision, not a vibe
+
+Every incident gets a severity the moment it&rsquo;s declared:
+
+- **SEV-1**: customer-facing outage, data exposure, or security compromise. All-hands, incident commander paged, client notification clock starts.
+- **SEV-2**: major functionality degraded for a meaningful subset of users, or a security control is failing.
+- **SEV-3**: minor degradation, workaround available, fix can wait for business hours.
+
+The severity drives who gets paged, how often we update stakeholders, and what the post-incident process looks like. Nobody has to argue about it in the moment.
+
+## Communication is a first-class deliverable
+
+During an active incident, we update affected clients on a fixed cadence: every 30 minutes for SEV-1, every hour for SEV-2. The updates follow a template: what we know, what we don&rsquo;t, what we&rsquo;re trying, what we&rsquo;ll do next, and when the next update is.
+
+For incidents that materially affect confidentiality, integrity or availability of client data, affected clients are notified **within 24 hours** of confirmation. That&rsquo;s a commitment in our SDLC policy and a line in our statements of work. We don&rsquo;t negotiate it down.
+
+## Post-incident reviews are blameless, written, and shared
+
+Every SEV-1 and SEV-2 produces a written post-incident review, usually within a week. The template is deliberately simple:
+
+- **Timeline**: what happened, when, in UTC, with log evidence.
+- **Root cause**: the technical fault, and the process or design choice that let it reach production.
+- **Impact**: who was affected, for how long, with what consequence.
+- **What went well**: detection, response, communication.
+- **Corrective actions**: specific, owned, dated. Tracked to completion.
+
+"Blameless" doesn&rsquo;t mean nobody is accountable. It means we assume the engineer acted reasonably given what they knew at the time, and we go after the system that let the mistake happen. Blaming people gets you quieter engineers. Fixing systems gets you fewer incidents.
+
+## What clients see
+
+For clients whose systems we operate:
+
+- A named engineering lead and a 24/7 incident contact path.
+- The same severity matrix and notification cadence, written into the SOW.
+- A copy of every post-incident review that touches their system, within agreed timelines.
+- An annual operations review: incident counts, MTTR trend, corrective actions shipped.
+
+## Why it matters
+
+Procurement teams have read a lot of marketing that promises reliability. What they want is evidence that when something breaks, a written process kicks in, a human picks up a pager, and a document lands in their inbox explaining what happened and what we changed.
+
+That&rsquo;s the bar. Publishing the process is the first step to meeting it.

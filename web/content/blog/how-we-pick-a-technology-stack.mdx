@@ -1,0 +1,56 @@
+---
+title: "How we pick a technology stack for a client"
+description: "A languages-first view of stack selection: why we default to TypeScript, React and Python, how we choose between Cloudflare and AWS, and the questions we ask before committing to anything exotic."
+date: "2026-04-18"
+author: "Courtix Engineering"
+tags: ["engineering", "architecture", "stack"]
+---
+
+Stack choice is where a lot of engagements go wrong before they start. Teams pick a trendy framework, a niche database, or a platform&rsquo;s newest product, and the client inherits a system they can&rsquo;t staff or migrate out of. This post explains how we avoid that.
+
+## The one-sentence version
+
+We pick the boring thing first, default to languages over proprietary products, and only reach for something novel when the problem genuinely demands it.
+
+## Languages first, platforms second
+
+We describe our stack in terms of languages and runtimes, not vendors. The default shape of a Courtix build:
+
+- **TypeScript and JavaScript** on Node.js for application servers and APIs.
+- **React and Next.js** for web frontends.
+- **Python** (Django, FastAPI) for data pipelines, analytics and AI workloads.
+- **PostgreSQL** for durable state, **Redis** for caches and queues.
+
+Cloudflare and AWS are platforms we build on. The application code is written against standard web technologies so the same services can move between platforms if business reasons demand it. We don&rsquo;t hitch a client&rsquo;s core logic to a proprietary product they can&rsquo;t leave.
+
+## Cloudflare vs AWS is a workload question
+
+We&rsquo;re cloud-pragmatic. The right choice depends on the workload, compliance posture, and the client&rsquo;s existing commitments:
+
+- **Cloudflare** tends to win for edge-heavy workloads, globally distributed sites, DDoS and WAF protection, and teams that want a tight, opinionated runtime.
+- **AWS** tends to win for heavy data workloads, complex compliance requirements (HIPAA, FedRAMP-adjacent), long-lived batch jobs, and clients already standardised on it.
+- Many engagements end up with both: AWS for backend data, Cloudflare for the edge.
+
+If a client arrives with an existing commitment to one or the other, we respect that unless there&rsquo;s a real technical reason not to. Re-platforming for aesthetic reasons is not one.
+
+## The questions we ask before committing
+
+Before we propose a stack, we answer:
+
+1. **What data lives here, and what are the compliance constraints?** This can rule out a region, a platform, or a managed service on day one.
+2. **Who will operate this in five years?** If the client&rsquo;s in-house team is a Python shop, building a Clojure backend is a disservice, no matter how elegant.
+3. **What&rsquo;s the integration surface?** Legacy systems, SSO, identity providers and on-prem dependencies shape the stack more than greenfield preference ever does.
+4. **What&rsquo;s the scaling profile?** A system that serves 200 internal users has different answers than one serving 20 million external ones. Pick for today and the next 18 months, not a hypothetical hockey stick.
+5. **What&rsquo;s the exit plan?** Every stack decision is a future migration cost. We bias toward ones that are cheap to leave.
+
+## When we do reach for something novel
+
+We&rsquo;re not allergic to new technology. Edge runtimes, vector databases, new inference APIs, modern queue systems, these all earn their place when the problem actually needs them. The bar is evidence: a prototype that shows the novel piece clearly outperforms the boring alternative on a real workload, not a benchmark on a marketing page.
+
+When we do adopt something new, we isolate it behind an interface so the rest of the system doesn&rsquo;t depend on it. If it doesn&rsquo;t work out, we replace the implementation without rewriting the application.
+
+## Why it matters
+
+Enterprise buyers have lived through a decade of framework churn. What they want from a build partner isn&rsquo;t the latest thing, it&rsquo;s a system their team can still operate in five years without re-hiring the entire engineering organisation.
+
+Boring is a feature. Picking it on purpose is the job.
