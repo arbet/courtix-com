@@ -38,6 +38,35 @@ const stats = [
   { k: "20+", v: "Countries served" },
 ];
 
+const team = [
+  {
+    name: "Samer Bechara",
+    role: "Founder & CTO",
+    bio: "Samer founded Courtix in 2011 after a decade of shipping production software across healthcare, marketplaces and enterprise platforms. He still writes code, reviews every architecture decision before it reaches a client proposal and is the technical point of contact on every engagement. His job is to keep Courtix senior-only and to refuse work that would require staffing juniors.",
+    linkedin: "https://www.linkedin.com/in/samerbechara/",
+  },
+  {
+    name: "Denis Vorobev",
+    role: "Head of Platform & Security",
+    bio: "Denis owns infrastructure, deployment and security posture across Courtix engagements. Fifteen years of hands-on platform engineering across AWS, Azure and GCP, supporting development teams from solo founders up to fifty engineers. His work spans CI/CD automation, multi-region architecture, observability and the security side of running production systems: vulnerability remediation, hardening, incident recovery and backup automation.",
+    linkedin: "https://www.linkedin.com/in/denis-vorobev-9238bb20a/",
+  },
+  {
+    name: "Gergely Parragh",
+    role: "Head of Delivery",
+    bio: "Gergely runs engagement delivery across Courtix client work: scope, milestones, written status and the weekly cadence that keeps stakeholders informed without pulling engineers into meeting sprawl. Background as a business analyst and product owner, with delivery experience across Agile, Kanban and Waterfall programmes. Prior roles in consulting and risk management, plus a master's in business informatics and a finance background.",
+    linkedin: "https://www.linkedin.com/in/gergely-parragh/",
+  },
+];
+
+function initialsOf(name: string) {
+  const cleaned = name.replace(/\[|\]/g, "");
+  const parts = cleaned.trim().split(/\s+/);
+  if (parts.length === 0) return "?";
+  if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+  return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+}
+
 export default function AboutPage() {
   const { registration, contact } = siteConfig;
   return (
@@ -106,6 +135,42 @@ export default function AboutPage() {
             <div key={s.v} className="bg-surface-1/80 p-6 text-center backdrop-blur">
               <div className="font-display text-3xl font-semibold text-gradient-brand">{s.k}</div>
               <div className="mt-1 text-xs uppercase tracking-wider text-fg-faint">{s.v}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="container-max my-24">
+        <SectionHeading
+          eyebrow="The team"
+          title="Senior engineers you can name before you sign."
+          description="The humans who design, build and operate the systems Courtix delivers. Every engagement is led by the people on this page, not anonymous staffing behind a logo."
+          align="center"
+        />
+        <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {team.map((p) => (
+            <div
+              key={p.name + p.role}
+              className="flex h-full flex-col rounded-2xl border border-border-subtle bg-surface-1/40 p-6 transition-all hover:border-border-strong hover:bg-surface-1/70"
+            >
+              <div className="flex items-center gap-4">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-border-subtle bg-gradient-to-br from-brand-500/20 to-brand-700/10 font-display text-lg font-semibold text-brand-200">
+                  {initialsOf(p.name)}
+                </div>
+                <div className="min-w-0">
+                  <h3 className="truncate text-base font-semibold text-fg">{p.name}</h3>
+                  <div className="mt-0.5 text-xs uppercase tracking-wider text-fg-faint">{p.role}</div>
+                </div>
+              </div>
+              <p className="mt-5 text-sm leading-relaxed text-fg-muted">{p.bio}</p>
+              <div className="mt-5 pt-4 border-t border-border-subtle">
+                <Link
+                  href={p.linkedin}
+                  className="inline-flex items-center gap-1.5 text-xs font-medium text-brand-300 hover:text-brand-200"
+                >
+                  LinkedIn profile
+                </Link>
+              </div>
             </div>
           ))}
         </div>
