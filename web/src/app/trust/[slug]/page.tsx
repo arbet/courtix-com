@@ -38,7 +38,7 @@ export default async function TrustDoc({ params }: { params: Promise<{ slug: str
       <PageHero eyebrow="Trust" title={doc.title} description={doc.description} />
       <section className="container-max my-12 max-w-3xl">
         <p className="text-xs uppercase tracking-wider text-fg-faint">
-          Version {doc.version ?? "1.0"} · Last updated {doc.updated}
+          Version {doc.version ?? "1.1"} · Last updated {doc.updated}
         </p>
         <div className="mt-6">
           <Mdx source={doc.body} />
