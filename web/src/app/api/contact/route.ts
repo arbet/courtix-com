@@ -25,10 +25,20 @@ export async function POST(req: Request) {
 
   const parsed = Body.safeParse(data);
   if (!parsed.success) {
-    return NextResponse.json(
-      { ok: false, message: "Please fill in the required fields and accept the policies." },
-      { status: 400 }
-    );
+    const fieldErrors = parsed.error.flatten().fieldErrors;
+    const labels: Record<string, string> = {
+      name: "full name",
+      email: "a valid work email",
+      message: "a project description of at least 10 characters",
+      accept: "the Terms, Privacy and Refund Policy checkbox",
+    };
+    const missing = Object.keys(fieldErrors)
+      .filter((k) => labels[k])
+      .map((k) => labels[k]);
+    const message = missing.length
+      ? `Please provide ${missing.join(", ")}.`
+      : "Please fill in the required fields and accept the policies.";
+    return NextResponse.json({ ok: false, message }, { status: 400 });
   }
 
   const { website, ...payload } = parsed.data;

@@ -194,8 +194,9 @@ function TextArea({ label, name, required }: { label: string; name: string; requ
         name={name}
         rows={5}
         required={required}
+        minLength={10}
         className="resize-y rounded-lg border border-border-subtle bg-white/[0.03] px-3 py-2.5 text-fg outline-none transition-colors focus:border-brand-500 focus:bg-white/[0.05]"
-        placeholder="Goals, timeline, tech context, whatever helps us reply usefully."
+        placeholder="Goals, timeline, tech context, whatever helps us reply usefully. 10+ characters."
       />
     </label>
   );
