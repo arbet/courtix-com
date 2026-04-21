@@ -50,10 +50,7 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-2 lg:flex">
-          <Link href="/contact" className="btn-secondary">
-            Talk to us
-          </Link>
-          <Link href="/contact?intent=start" className="btn-primary">
+          <Link href="/contact" className="btn-primary">
             Start a project
           </Link>
         </div>
@@ -86,11 +83,8 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
-            <div className="mt-2 flex gap-2">
-              <Link href="/contact" className="btn-secondary flex-1" onClick={() => setOpen(false)}>
-                Talk to us
-              </Link>
-              <Link href="/contact?intent=start" className="btn-primary flex-1" onClick={() => setOpen(false)}>
+            <div className="mt-2">
+              <Link href="/contact" className="btn-primary w-full" onClick={() => setOpen(false)}>
                 Start a project
               </Link>
             </div>
